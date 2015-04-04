@@ -6,6 +6,7 @@ workspace 'WeatherAroundUs'
 xcodeproj 'WeatherAroundUs'
 
 pod 'Spring', '~> 1.0.1'
+pod 'OpenWeatherMapAPI', '~> 0.0.5'
 
 use_frameworks!
 

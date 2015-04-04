@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-OpenWeatherMapAPI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Spring.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3DB102565F64312EBCBF51C9</key>
+		<key>1F242EA520504875AE7FA8AB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7CCC02A1315E2B3F27F646CE</key>
+		<key>328C9464EEA1A460A67F32F4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3C4DA372CBF05C68D1AA6AFF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E3D8DAB60B93C9549734F05E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
