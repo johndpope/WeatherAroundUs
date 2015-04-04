@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         cityDetail.frame.size = view.frame.size
         cityDetail.frame.origin = CGPointMake(0, self.view.frame.height * 3 / 4)
         
-        cityList.frame.size = CGSizeMake(cityList.frame.size.width / 2 , cityList.frame.size.height)
+        cityList.frame.size = CGSizeMake(view.frame.size.width / 2 , cityList.frame.size.height)
         cityList.frame.origin = CGPointMake(-self.view.frame.width, 0)
     }
     
@@ -60,7 +60,6 @@ class ViewController: UIViewController {
     
     func cityListDisappear(sender: UIPanGestureRecognizer) {
         var x = sender.translationInView(cityList).x
-        println(x)
         if x < 0 {
             cityList.frame.origin = CGPointMake(x, 0)
             
