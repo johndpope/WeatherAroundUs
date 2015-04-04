@@ -19,26 +19,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        draggingGesture = UIPanGestureRecognizer(target: self, action: "draggedDetailView:")
-        cityDetail.addGestureRecognizer(draggingGesture)
+        cityDetail.frame.size = view.frame.size
+        cityDetail.frame.origin = CGPointMake(0, self.view.frame.height * 3 / 4)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func draggedDetailView(sender: UIPanGestureRecognizer){
-    
-        var y = sender.translationInView(view).y
-        
-        // check if the view is fully display
-        if sender.view!.frame.origin.y == 0{
-            
-            
-        }else{
-            
-            if y < 0 {
-                println("move")
-            }
-            
-        }
+    override func viewDidAppear(animated: Bool) {
+        cityDetail.frame.size = view.frame.size
+        cityDetail.frame.origin = CGPointMake(0, self.view.frame.height * 3 / 4)
     }
     
     override func didReceiveMemoryWarning() {
