@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -32,7 +31,7 @@
                                 </subviews>
                             </scrollView>
                             <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdF-Ye-Et4">
-                                <rect key="frame" x="0.0" y="0.0" width="105" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="155" height="568"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="1"/>
                                 <connections>
                                     <segue destination="kyB-iu-air" kind="embed" id="0oP-QH-fn9"/>
@@ -47,7 +46,7 @@
                             <constraint firstItem="jXW-qH-GTO" firstAttribute="top" secondItem="UeB-km-1py" secondAttribute="bottom" id="I7B-Qt-Tg2"/>
                             <constraint firstItem="UeB-km-1py" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="JdK-vG-Gmw"/>
                             <constraint firstItem="jXW-qH-GTO" firstAttribute="top" secondItem="qUh-Bi-mEV" secondAttribute="bottom" id="Mlt-L7-ccp"/>
-                            <constraint firstItem="hdF-Ye-Et4" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="ek2-7N-FHX"/>
+                            <constraint firstItem="hdF-Ye-Et4" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="ek2-7N-FHX"/>
                             <constraint firstItem="UeB-km-1py" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="fN1-Pr-T8o"/>
                             <constraint firstItem="qUh-Bi-mEV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="gQR-Sl-Rxo"/>
                         </constraints>
@@ -90,37 +89,43 @@
                         <viewControllerLayoutGuide type="bottom" id="wY5-hT-eAX"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7BP-L1-h7w">
-                        <rect key="frame" x="0.0" y="0.0" width="105" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="155" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mZU-Lk-mU3">
-                                <rect key="frame" x="0.0" y="0.0" width="105" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexTrackingBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="YMT-8p-U7d">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YMT-8p-U7d" id="D3A-dS-gNk">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" red="0.87390738677540303" green="0.91777969967935957" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="kyB-iu-air" id="E0Z-2r-xgl"/>
-                                    <outlet property="delegate" destination="kyB-iu-air" id="2qZ-8I-HTm"/>
-                                </connections>
-                            </tableView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RGU-QL-Q2P">
+                                <rect key="frame" x="0.0" y="0.0" width="155" height="568"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hA9-Yi-gvO">
+                                    <rect key="frame" x="0.0" y="0.0" width="155" height="568"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="6" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mZU-Lk-mU3">
+                                            <rect key="frame" x="0.0" y="0.0" width="155" height="568"/>
+                                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="separatorColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="sectionIndexColor" red="0.070845170454545414" green="0.013607372970506577" blue="0.017551697683056193" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="0.01" colorSpace="calibratedRGB"/>
+                                            <color key="sectionIndexTrackingBackgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="kyB-iu-air" id="E0Z-2r-xgl"/>
+                                                <outlet property="delegate" destination="kyB-iu-air" id="2qZ-8I-HTm"/>
+                                            </connections>
+                                        </tableView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="mZU-Lk-mU3" firstAttribute="top" secondItem="hA9-Yi-gvO" secondAttribute="top" id="Ac2-Lo-u9a"/>
+                                        <constraint firstAttribute="bottom" secondItem="mZU-Lk-mU3" secondAttribute="bottom" id="CZT-8Z-VNS"/>
+                                        <constraint firstItem="mZU-Lk-mU3" firstAttribute="leading" secondItem="hA9-Yi-gvO" secondAttribute="leading" id="rva-72-wNc"/>
+                                        <constraint firstAttribute="trailing" secondItem="mZU-Lk-mU3" secondAttribute="trailing" id="yCR-5T-RPZ"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="mZU-Lk-mU3" secondAttribute="bottom" id="9fg-7F-JXd"/>
-                            <constraint firstItem="mZU-Lk-mU3" firstAttribute="top" secondItem="ghQ-Ai-km8" secondAttribute="bottom" id="N1v-Hr-IHh"/>
-                            <constraint firstAttribute="trailing" secondItem="mZU-Lk-mU3" secondAttribute="trailing" id="Tvx-rR-Rzi"/>
-                            <constraint firstItem="mZU-Lk-mU3" firstAttribute="leading" secondItem="7BP-L1-h7w" secondAttribute="leading" id="heu-vI-zfO"/>
+                            <constraint firstItem="wY5-hT-eAX" firstAttribute="top" secondItem="RGU-QL-Q2P" secondAttribute="bottom" id="J0r-Um-FTn"/>
+                            <constraint firstItem="RGU-QL-Q2P" firstAttribute="leading" secondItem="7BP-L1-h7w" secondAttribute="leading" id="OhS-t5-Dit"/>
+                            <constraint firstItem="RGU-QL-Q2P" firstAttribute="top" secondItem="ghQ-Ai-km8" secondAttribute="top" id="b3s-TX-p8G"/>
+                            <constraint firstAttribute="trailing" secondItem="RGU-QL-Q2P" secondAttribute="trailing" id="cNM-4h-wnK"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
