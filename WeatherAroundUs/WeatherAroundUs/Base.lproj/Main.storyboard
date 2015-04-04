@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -30,14 +31,22 @@
                                     </containerView>
                                 </subviews>
                             </scrollView>
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdF-Ye-Et4">
+                                <rect key="frame" x="-235" y="0.0" width="343" height="568"/>
+                                <connections>
+                                    <segue destination="kyB-iu-air" kind="embed" id="0oP-QH-fn9"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="jXW-qH-GTO" firstAttribute="top" secondItem="hdF-Ye-Et4" secondAttribute="bottom" id="7U0-gC-CSQ"/>
                             <constraint firstAttribute="trailing" secondItem="UeB-km-1py" secondAttribute="trailing" id="BaA-a9-84g"/>
                             <constraint firstAttribute="trailing" secondItem="qUh-Bi-mEV" secondAttribute="trailing" id="Bfh-Sw-ZcJ"/>
                             <constraint firstItem="qUh-Bi-mEV" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="D0E-09-Bse"/>
                             <constraint firstItem="jXW-qH-GTO" firstAttribute="top" secondItem="UeB-km-1py" secondAttribute="bottom" id="I7B-Qt-Tg2"/>
                             <constraint firstItem="UeB-km-1py" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="JdK-vG-Gmw"/>
                             <constraint firstItem="jXW-qH-GTO" firstAttribute="top" secondItem="qUh-Bi-mEV" secondAttribute="bottom" id="Mlt-L7-ccp"/>
+                            <constraint firstItem="hdF-Ye-Et4" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="ek2-7N-FHX"/>
                             <constraint firstItem="UeB-km-1py" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="fN1-Pr-T8o"/>
                             <constraint firstItem="qUh-Bi-mEV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="gQR-Sl-Rxo"/>
                         </constraints>
@@ -45,11 +54,12 @@
                     <connections>
                         <outlet property="cityDetail" destination="qet-UZ-vj9" id="Yt3-oC-btd"/>
                         <outlet property="cityDetailBack" destination="UeB-km-1py" id="LB2-N3-v94"/>
+                        <outlet property="cityList" destination="hdF-Ye-Et4" id="pqh-3V-A1U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="184" y="313"/>
+            <point key="canvasLocation" x="184" y="-54"/>
         </scene>
         <!--City Detail View Controller-->
         <scene sceneID="pYD-IV-Ek3">
@@ -62,12 +72,32 @@
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dBH-Gf-dJW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.59742890209999999" green="0.28303097150000001" blue="0.025482414240000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZ1-sm-XVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="356" y="1176"/>
+        </scene>
+        <!--City List View Controller-->
+        <scene sceneID="dMs-NR-7kX">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="kyB-iu-air" customClass="CityListViewController" customModule="WeatherAroundUs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ghQ-Ai-km8"/>
+                        <viewControllerLayoutGuide type="bottom" id="wY5-hT-eAX"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7BP-L1-h7w">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xME-WM-iHI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="589" y="237"/>
         </scene>
     </scenes>
     <resources>

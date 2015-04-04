@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var cityDetailBack: UIScrollView!
     @IBOutlet var cityDetail: UIView!
+    @IBOutlet var cityList: UIView!
 
     var draggingGesture: UIPanGestureRecognizer!
 
