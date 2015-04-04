@@ -26,15 +26,27 @@ class ViewController: UIViewController {
         
         var cityListDisappearDragger: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: "cityListDisappear:")
         self.cityList.addGestureRecognizer(cityListDisappearDragger)
+        
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    
     override func viewDidAppear(animated: Bool) {
-        cityDetail.frame.size = view.frame.size
-        cityDetail.frame.origin = CGPointMake(0, self.view.frame.height * 3 / 4)
-        
         cityList.frame.size = CGSizeMake(view.frame.size.width / 2 , cityList.frame.size.height)
         cityList.frame.origin = CGPointMake(-self.view.frame.width, 0)
+        
+        cityDetailBack.contentSize = CGSizeMake(view.frame.width, cityDetail.frame.height + view.frame.height * 3 / 4)
+        cityDetail.frame.origin = CGPointMake(0, self.view.frame.height)
+        //cityDetail enters
+        cityDetailAppear()
+    }
+    
+    func cityDetailAppear() {
+        UIView.animateWithDuration(0.8, animations: { () -> Void in
+            self.cityDetail.frame.origin = CGPointMake(0, self.view.frame.height * 3 / 4)
+            self.cityDetail.alpha = 1
+        })
     }
     
     func cityListAppear(sender: UIScreenEdgePanGestureRecognizer) {
@@ -60,7 +72,6 @@ class ViewController: UIViewController {
     
     func cityListDisappear(sender: UIPanGestureRecognizer) {
         var x = sender.translationInView(cityList).x
-        println(x)
         if x < 0 {
             cityList.frame.origin = CGPointMake(x, 0)
             
