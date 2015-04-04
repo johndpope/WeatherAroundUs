@@ -112,12 +112,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherAroundUs/ViewController.swift"
-            timestampString = "449877265.372599"
+            timestampString = "449881685.535172"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "cityListAppear(_:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "cityDetailAppear()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
