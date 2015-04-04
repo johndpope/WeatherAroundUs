@@ -46,4 +46,3 @@ class CityListViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     
 }
-}

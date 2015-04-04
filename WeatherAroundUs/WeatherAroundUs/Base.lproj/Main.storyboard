@@ -96,8 +96,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="kyB-iu-air" id="1Ad-3t-TQ1"/>
-                                    <outlet property="delegate" destination="kyB-iu-air" id="cBu-D9-8Zm"/>
+                                    <outlet property="dataSource" destination="kyB-iu-air" id="jLb-Sc-bdR"/>
+                                    <outlet property="delegate" destination="kyB-iu-air" id="Sky-Js-69M"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -105,7 +105,7 @@
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="tableView" destination="SlK-ht-j1M" id="Ii0-YV-y0P"/>
+                        <outlet property="tableView" destination="SlK-ht-j1M" id="Ozj-yG-Db6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xME-WM-iHI" userLabel="First Responder" sceneMemberID="firstResponder"/>
