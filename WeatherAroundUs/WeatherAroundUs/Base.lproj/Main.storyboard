@@ -45,8 +45,18 @@
                                     <constraint firstItem="443-lc-Be0" firstAttribute="width" secondItem="UeB-km-1py" secondAttribute="width" id="zMW-gb-MWr"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNt-n2-tv1">
+                                <rect key="frame" x="10" y="10" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="YyO-IX-19d"/>
+                                    <constraint firstAttribute="height" constant="50" id="x4e-AX-5KZ"/>
+                                </constraints>
+                                <state key="normal" image="button_ListOfCities.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdF-Ye-Et4">
-                                <rect key="frame" x="0.0" y="0.0" width="155" height="568"/>
+                                <rect key="frame" x="-155" y="0.0" width="155" height="568"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="1"/>
                                 <connections>
                                     <segue destination="kyB-iu-air" kind="embed" id="0oP-QH-fn9"/>
@@ -61,9 +71,11 @@
                             <constraint firstItem="jXW-qH-GTO" firstAttribute="top" secondItem="UeB-km-1py" secondAttribute="bottom" id="I7B-Qt-Tg2"/>
                             <constraint firstItem="UeB-km-1py" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="JdK-vG-Gmw"/>
                             <constraint firstItem="jXW-qH-GTO" firstAttribute="top" secondItem="qUh-Bi-mEV" secondAttribute="bottom" id="Mlt-L7-ccp"/>
+                            <constraint firstItem="pNt-n2-tv1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="OPv-bj-ITj"/>
                             <constraint firstItem="hdF-Ye-Et4" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="ek2-7N-FHX"/>
                             <constraint firstItem="UeB-km-1py" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="fN1-Pr-T8o"/>
                             <constraint firstItem="qUh-Bi-mEV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="gQR-Sl-Rxo"/>
+                            <constraint firstItem="pNt-n2-tv1" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="10" id="vO9-zg-Xc9"/>
                         </constraints>
                     </view>
                     <connections>
@@ -150,11 +162,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xME-WM-iHI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-
             <point key="canvasLocation" x="604" y="111"/>
         </scene>
     </scenes>
     <resources>
+        <image name="button_ListOfCities.png" width="102" height="102"/>
         <image name="fake_map.png" width="374" height="669"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
