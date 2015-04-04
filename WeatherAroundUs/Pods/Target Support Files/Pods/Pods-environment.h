@@ -6,6 +6,18 @@
 // project.
 
 
+// AFNetworking
+#define COCOAPODS_POD_AVAILABLE_AFNetworking
+#define COCOAPODS_VERSION_MAJOR_AFNetworking 1
+#define COCOAPODS_VERSION_MINOR_AFNetworking 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking 4
+
+// OpenWeatherMapAPI
+#define COCOAPODS_POD_AVAILABLE_OpenWeatherMapAPI
+#define COCOAPODS_VERSION_MAJOR_OpenWeatherMapAPI 0
+#define COCOAPODS_VERSION_MINOR_OpenWeatherMapAPI 0
+#define COCOAPODS_VERSION_PATCH_OpenWeatherMapAPI 5
+
 // Spring
 #define COCOAPODS_POD_AVAILABLE_Spring
 #define COCOAPODS_VERSION_MAJOR_Spring 1

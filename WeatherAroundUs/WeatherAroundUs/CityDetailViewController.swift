@@ -15,7 +15,7 @@ class CityDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
+//pod 'OpenWeatherMapAPI', '~> 0.0.5'
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
