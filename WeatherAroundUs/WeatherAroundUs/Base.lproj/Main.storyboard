@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -32,7 +32,7 @@
                                 </subviews>
                             </scrollView>
                             <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdF-Ye-Et4">
-                                <rect key="frame" x="-235" y="0.0" width="343" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="568"/>
                                 <connections>
                                     <segue destination="kyB-iu-air" kind="embed" id="0oP-QH-fn9"/>
                                 </connections>
@@ -89,7 +89,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wY5-hT-eAX"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7BP-L1-h7w">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -97,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xME-WM-iHI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="589" y="237"/>
+            <point key="canvasLocation" x="764.5" y="120"/>
         </scene>
     </scenes>
     <resources>
