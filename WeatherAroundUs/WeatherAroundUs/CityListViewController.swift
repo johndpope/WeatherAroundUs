@@ -1,5 +1,5 @@
 //
-//  CityDetailViewController.swift
+//  CityListViewController.swift
 //  WeatherAroundUs
 //
 //  Created by Kedan Li on 15/4/4.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CityDetailViewController: UIViewController {
+class CityListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
