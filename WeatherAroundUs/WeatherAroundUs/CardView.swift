@@ -16,7 +16,7 @@ class CardView: UIView {
         
         var cardImage = UIImageView(image: UIImage(named: "Card"))
         cardImage.frame = frame
-
+        self.addSubview(cardImage)
     }
 
     required init(coder aDecoder: NSCoder) {
