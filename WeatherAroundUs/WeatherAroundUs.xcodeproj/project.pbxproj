@@ -17,6 +17,9 @@
 		42F15D461AD07B35004D64EF /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F15D451AD07B35004D64EF /* CityDetailViewController.swift */; };
 		42F15D481AD08271004D64EF /* fake_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F15D471AD08271004D64EF /* fake_map.png */; };
 		42F15D4D1AD08CDA004D64EF /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F15D4C1AD08CDA004D64EF /* CityListViewController.swift */; };
+		42F62E751AD0B6EE00D494E6 /* ListOfCities.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F62E741AD0B6EE00D494E6 /* ListOfCities.png */; };
+		42F62E771AD0B75100D494E6 /* Card.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F62E761AD0B75100D494E6 /* Card.png */; };
+		42F62E791AD0B84900D494E6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F62E781AD0B84900D494E6 /* CardView.swift */; };
 		43309AE34EFF8A1147E54079 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7061C7B48DE2F420FC0085AE /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D5362D611AD0B77F00CAD195 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D601AD0B77F00CAD195 /* GoogleMaps.framework */; };
 		D5362D631AD0B7BA00CAD195 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D5362D621AD0B7BA00CAD195 /* GoogleMaps.bundle */; };
@@ -33,6 +36,8 @@
 		D5362D791AD0B8AC00CAD195 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D781AD0B8AC00CAD195 /* QuartzCore.framework */; };
 		D5362D7B1AD0B8B600CAD195 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D7A1AD0B8B600CAD195 /* SystemConfiguration.framework */; };
 		D54D64CD1AD08DBE003CBCD9 /* button_ListOfCities.png in Resources */ = {isa = PBXBuildFile; fileRef = D54D64CC1AD08DBE003CBCD9 /* button_ListOfCities.png */; };
+
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,9 @@
 		42F15D451AD07B35004D64EF /* CityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
 		42F15D471AD08271004D64EF /* fake_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fake_map.png; sourceTree = "<group>"; };
 		42F15D4C1AD08CDA004D64EF /* CityListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
+		42F62E741AD0B6EE00D494E6 /* ListOfCities.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListOfCities.png; sourceTree = "<group>"; };
+		42F62E761AD0B75100D494E6 /* Card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Card.png; sourceTree = "<group>"; };
+		42F62E781AD0B84900D494E6 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		7061C7B48DE2F420FC0085AE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C74A3FFE21D5AC2F375E634 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D5362D601AD0B77F00CAD195 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = ../GoogleMaps.framework; sourceTree = "<group>"; };
@@ -77,6 +85,7 @@
 		D5362D781AD0B8AC00CAD195 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D5362D7A1AD0B8B600CAD195 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D54D64CC1AD08DBE003CBCD9 /* button_ListOfCities.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_ListOfCities.png; sourceTree = "<group>"; };
+
 		F0219F11709C93606E979962 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +157,7 @@
 				D5362D601AD0B77F00CAD195 /* GoogleMaps.framework */,
 				42D4EDC81A9E7F02006AE807 /* AppDelegate.swift */,
 				42D4EDCD1A9E7F02006AE807 /* ViewController.swift */,
+				42F62E781AD0B84900D494E6 /* CardView.swift */,
 				42F15D451AD07B35004D64EF /* CityDetailViewController.swift */,
 				42F15D4C1AD08CDA004D64EF /* CityListViewController.swift */,
 				42D4EDCF1A9E7F02006AE807 /* Main.storyboard */,
@@ -188,8 +198,9 @@
 		42F15D491AD08275004D64EF /* IMGs */ = {
 			isa = PBXGroup;
 			children = (
-				D54D64CC1AD08DBE003CBCD9 /* button_ListOfCities.png */,
+				42F62E741AD0B6EE00D494E6 /* ListOfCities.png */,
 				42F15D471AD08271004D64EF /* fake_map.png */,
+				42F62E761AD0B75100D494E6 /* Card.png */,
 			);
 			name = IMGs;
 			sourceTree = "<group>";
@@ -301,8 +312,9 @@
 				42D4EDD61A9E7F02006AE807 /* LaunchScreen.xib in Resources */,
 				42D4EDD31A9E7F02006AE807 /* Images.xcassets in Resources */,
 				D5362D631AD0B7BA00CAD195 /* GoogleMaps.bundle in Resources */,
+				42F62E771AD0B75100D494E6 /* Card.png in Resources */,
+				42F62E751AD0B6EE00D494E6 /* ListOfCities.png in Resources */,
 				42F15D481AD08271004D64EF /* fake_map.png in Resources */,
-				D54D64CD1AD08DBE003CBCD9 /* button_ListOfCities.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +384,7 @@
 				42D4EDCE1A9E7F02006AE807 /* ViewController.swift in Sources */,
 				42D4EDC91A9E7F02006AE807 /* AppDelegate.swift in Sources */,
 				42F15D4D1AD08CDA004D64EF /* CityListViewController.swift in Sources */,
+				42F62E791AD0B84900D494E6 /* CardView.swift in Sources */,
 				42D4EDCC1A9E7F02006AE807 /* WeatherAroundUs.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

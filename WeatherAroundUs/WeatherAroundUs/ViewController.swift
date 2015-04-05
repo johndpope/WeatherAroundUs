@@ -11,11 +11,11 @@ import Spring
 
 class ViewController: UIViewController {
 
-    @IBOutlet var cityDetailBack: UIScrollView!
-    @IBOutlet var cityDetail: UIView!
     @IBOutlet var cityList: UIView!
     @IBOutlet var menuButton: DesignableButton!
 
+    var weatherCardList = [UIImageView]()
+    
     var draggingGesture: UIScreenEdgePanGestureRecognizer!
 
     
@@ -28,8 +28,7 @@ class ViewController: UIViewController {
         
         var cityListDisappearDragger: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: "cityListDisappear:")
         self.cityList.addGestureRecognizer(cityListDisappearDragger)
-        
-
+    
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -39,24 +38,13 @@ class ViewController: UIViewController {
         
         cityList.frame.size = CGSizeMake(view.frame.size.width / 2 , cityList.frame.size.height)
         cityList.frame.origin = CGPointMake(-self.view.frame.width, 0)
-        
-        cityDetailBack.contentSize = CGSizeMake(view.frame.width, cityDetail.frame.height + view.frame.height * 3 / 4)
-        cityDetail.frame.origin = CGPointMake(0, self.view.frame.height)
         //cityDetail enters
-        cityDetailAppear()
     }
     
     @IBAction func menuButtonClicked(sender: AnyObject) {
         UIView.animateWithDuration(0.8, animations: { () -> Void in
             self.cityList.frame.origin = CGPointMake(0, 0)
             }, completion: { (bool) -> Void in
-        })
-    }
-    
-    func cityDetailAppear() {
-        UIView.animateWithDuration(0.8, animations: { () -> Void in
-            self.cityDetail.frame.origin = CGPointMake(0, self.view.frame.height * 3 / 4)
-            self.cityDetail.alpha = 1
         })
     }
     
