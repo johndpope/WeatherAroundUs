@@ -34,6 +34,40 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
         UserLocation.delegate = self
     }
     
+    func gotCurrentLocation(location: CLLocation) {
+        if planeStaticMode{
+            self.animateToLocation(location.coordinate)
+        }
+    }
+    
+    
+    func mapView(mapView: GMSMapView!, willMove gesture: Bool) {
+        
+        if gesture && planeStaticMode{
+            // go to the center coordinate
+            self.animateToLocation(UserLocation.centerLocation.coordinate)
+            println(mapView.camera.zoom)
+        }
+    }
+    
+    func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
+        // move the prebase if in add base mode
+        
+    }
+    
+    func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
+        
+    }
+    
+    func mapView(mapView: GMSMapView!, didLongPressAtCoordinate coordinate: CLLocationCoordinate2D) {
+        var content = GMSMarker(position: coordinate)
+        content.icon = UIImage(named: "ButtonPlane")?.resize(CGSizeMake(25, 25))
+        content.appearAnimation = kGMSMarkerAnimationPop
+        content.snippet = "sdds"
+        content.map = self
+    }
+
+    
     override init(){
         super.init()
         setup()
@@ -50,32 +84,6 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
         setup()
     }
 
-    
-    func gotCurrentLocation(location: CLLocation) {
-        if planeStaticMode{
-            self.animateToLocation(location.coordinate)
-        }
-    }
-    
-    
-    func mapView(mapView: GMSMapView!, willMove gesture: Bool) {
-
-        if gesture && planeStaticMode{
-            // go to the center coordinate
-                self.animateToLocation(UserLocation.centerLocation.coordinate)
-                println(mapView.camera.zoom)
-        }
-    }
-    
-    func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
-        // move the prebase if in add base mode
-        
-    }
-    
-    func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
-        
-    }
-    
     
     /*
     // Only override drawRect: if you perform custom drawing.

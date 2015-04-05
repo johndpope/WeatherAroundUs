@@ -19,7 +19,6 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     
     var draggingGesture: UIScreenEdgePanGestureRecognizer!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
