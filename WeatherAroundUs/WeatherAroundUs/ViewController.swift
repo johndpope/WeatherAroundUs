@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Spring
 
 class ViewController: UIViewController {
 
     @IBOutlet var cityDetailBack: UIScrollView!
     @IBOutlet var cityDetail: UIView!
     @IBOutlet var cityList: UIView!
+    @IBOutlet var menuButton: DesignableButton!
 
     var draggingGesture: UIScreenEdgePanGestureRecognizer!
 
@@ -33,6 +35,8 @@ class ViewController: UIViewController {
     
     
     override func viewDidAppear(animated: Bool) {
+        menuButton.animate()
+        
         cityList.frame.size = CGSizeMake(view.frame.size.width / 2 , cityList.frame.size.height)
         cityList.frame.origin = CGPointMake(-self.view.frame.width, 0)
         
@@ -40,6 +44,13 @@ class ViewController: UIViewController {
         cityDetail.frame.origin = CGPointMake(0, self.view.frame.height)
         //cityDetail enters
         cityDetailAppear()
+    }
+    
+    @IBAction func menuButtonClicked(sender: AnyObject) {
+        UIView.animateWithDuration(0.8, animations: { () -> Void in
+            self.cityList.frame.origin = CGPointMake(0, 0)
+            }, completion: { (bool) -> Void in
+        })
     }
     
     func cityDetailAppear() {

@@ -45,7 +45,7 @@
                                     <constraint firstItem="443-lc-Be0" firstAttribute="width" secondItem="UeB-km-1py" secondAttribute="width" id="zMW-gb-MWr"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNt-n2-tv1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNt-n2-tv1" customClass="DesignableButton" customModule="Spring">
                                 <rect key="frame" x="10" y="10" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="YyO-IX-19d"/>
@@ -54,6 +54,17 @@
                                 <state key="normal" image="button_ListOfCities.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autohide" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideRight"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="menuButtonClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zFp-no-PFc"/>
+                                </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdF-Ye-Et4">
                                 <rect key="frame" x="-155" y="0.0" width="155" height="568"/>
@@ -82,6 +93,7 @@
                         <outlet property="cityDetail" destination="qet-UZ-vj9" id="Yt3-oC-btd"/>
                         <outlet property="cityDetailBack" destination="UeB-km-1py" id="LB2-N3-v94"/>
                         <outlet property="cityList" destination="hdF-Ye-Et4" id="pqh-3V-A1U"/>
+                        <outlet property="menuButton" destination="pNt-n2-tv1" id="l0J-Sj-5Rc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
