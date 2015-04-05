@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>Pods-Alamofire.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>Pods-OpenWeatherMapAPI.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -19,6 +24,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Pods-SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -28,6 +38,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>1F242EA520504875AE7FA8AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>300756150F8EA1F60192DF20</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,7 +62,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5330AFABDC3E7B6D94893B35</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6979516126A2893B2A4CEA9C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7CCC02A1315E2B3F27F646CE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9B4DB442AF2EAD3CEAA40C5C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

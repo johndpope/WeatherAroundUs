@@ -34,7 +34,7 @@ class ViewController: UIViewController, GMSMapViewDelegate {
         var layer = CachingTileClass()
         layer.map = mapView
         mapView.setMinZoom(7, maxZoom: 11)
-        
+        //APIkey:AIzaSyDLBiMd9DqNtqeRc2DMtoeYL4hg53wUEw8
         // Do any additional setup after loading the view, typically from a nib.
     }
     
