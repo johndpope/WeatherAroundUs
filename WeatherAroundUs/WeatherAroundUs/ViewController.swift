@@ -13,7 +13,7 @@ class ViewController: UIViewController, GMSMapViewDelegate {
 
     @IBOutlet var cityList: UIView!
     @IBOutlet var menuButton: DesignableButton!
-    @IBOutlet var mapView: GMSMapView!
+    @IBOutlet var mapView: MapViewForWeather!
 
     var weatherCardList = [UIImageView]()
     
@@ -29,12 +29,7 @@ class ViewController: UIViewController, GMSMapViewDelegate {
         
         var cityListDisappearDragger: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: "cityListDisappear:")
         self.cityList.addGestureRecognizer(cityListDisappearDragger)
-    
-
-        var layer = CachingTileClass()
-        layer.map = mapView
-        mapView.mapType = kGMSTypeNone
-        mapView.setMinZoom(7, maxZoom: 11)
+        println(UIFont.familyNames())
         
         var geocoder = GMSGeocoder()
         geocoder.reverseGeocodeCoordinate(CLLocationCoordinate2DMake(36.3, -120)) { (response, error) -> Void in
