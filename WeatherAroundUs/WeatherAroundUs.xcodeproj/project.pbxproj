@@ -17,8 +17,27 @@
 		42F15D461AD07B35004D64EF /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F15D451AD07B35004D64EF /* CityDetailViewController.swift */; };
 		42F15D481AD08271004D64EF /* fake_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F15D471AD08271004D64EF /* fake_map.png */; };
 		42F15D4D1AD08CDA004D64EF /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F15D4C1AD08CDA004D64EF /* CityListViewController.swift */; };
+		42F62E751AD0B6EE00D494E6 /* ListOfCities.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F62E741AD0B6EE00D494E6 /* ListOfCities.png */; };
+		42F62E771AD0B75100D494E6 /* Card.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F62E761AD0B75100D494E6 /* Card.png */; };
+		42F62E791AD0B84900D494E6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F62E781AD0B84900D494E6 /* CardView.swift */; };
 		43309AE34EFF8A1147E54079 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7061C7B48DE2F420FC0085AE /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D5362D611AD0B77F00CAD195 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D601AD0B77F00CAD195 /* GoogleMaps.framework */; };
+		D5362D631AD0B7BA00CAD195 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D5362D621AD0B7BA00CAD195 /* GoogleMaps.bundle */; };
+		D5362D651AD0B83F00CAD195 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D641AD0B83F00CAD195 /* AVFoundation.framework */; };
+		D5362D671AD0B84800CAD195 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D661AD0B84800CAD195 /* CoreData.framework */; };
+		D5362D691AD0B85300CAD195 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D681AD0B85300CAD195 /* CoreLocation.framework */; };
+		D5362D6B1AD0B85B00CAD195 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D6A1AD0B85B00CAD195 /* CoreText.framework */; };
+		D5362D6D1AD0B86400CAD195 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D6C1AD0B86400CAD195 /* GLKit.framework */; };
+		D5362D6F1AD0B86D00CAD195 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D6E1AD0B86D00CAD195 /* ImageIO.framework */; };
+		D5362D711AD0B88300CAD195 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D701AD0B88300CAD195 /* libc++.dylib */; };
+		D5362D731AD0B89100CAD195 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D721AD0B89100CAD195 /* libicucore.dylib */; };
+		D5362D751AD0B89C00CAD195 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D741AD0B89C00CAD195 /* libz.dylib */; };
+		D5362D771AD0B8A400CAD195 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D761AD0B8A400CAD195 /* OpenGLES.framework */; };
+		D5362D791AD0B8AC00CAD195 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D781AD0B8AC00CAD195 /* QuartzCore.framework */; };
+		D5362D7B1AD0B8B600CAD195 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D7A1AD0B8B600CAD195 /* SystemConfiguration.framework */; };
 		D54D64CD1AD08DBE003CBCD9 /* button_ListOfCities.png in Resources */ = {isa = PBXBuildFile; fileRef = D54D64CC1AD08DBE003CBCD9 /* button_ListOfCities.png */; };
+
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +65,27 @@
 		42F15D451AD07B35004D64EF /* CityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
 		42F15D471AD08271004D64EF /* fake_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fake_map.png; sourceTree = "<group>"; };
 		42F15D4C1AD08CDA004D64EF /* CityListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
+		42F62E741AD0B6EE00D494E6 /* ListOfCities.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListOfCities.png; sourceTree = "<group>"; };
+		42F62E761AD0B75100D494E6 /* Card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Card.png; sourceTree = "<group>"; };
+		42F62E781AD0B84900D494E6 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		7061C7B48DE2F420FC0085AE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C74A3FFE21D5AC2F375E634 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D5362D601AD0B77F00CAD195 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = ../GoogleMaps.framework; sourceTree = "<group>"; };
+		D5362D621AD0B7BA00CAD195 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
+		D5362D641AD0B83F00CAD195 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D5362D661AD0B84800CAD195 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D5362D681AD0B85300CAD195 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D5362D6A1AD0B85B00CAD195 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		D5362D6C1AD0B86400CAD195 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		D5362D6E1AD0B86D00CAD195 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		D5362D701AD0B88300CAD195 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		D5362D721AD0B89100CAD195 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		D5362D741AD0B89C00CAD195 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D5362D761AD0B8A400CAD195 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		D5362D781AD0B8AC00CAD195 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D5362D7A1AD0B8B600CAD195 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D54D64CC1AD08DBE003CBCD9 /* button_ListOfCities.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_ListOfCities.png; sourceTree = "<group>"; };
+
 		F0219F11709C93606E979962 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +94,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5362D7B1AD0B8B600CAD195 /* SystemConfiguration.framework in Frameworks */,
+				D5362D791AD0B8AC00CAD195 /* QuartzCore.framework in Frameworks */,
+				D5362D771AD0B8A400CAD195 /* OpenGLES.framework in Frameworks */,
+				D5362D751AD0B89C00CAD195 /* libz.dylib in Frameworks */,
+				D5362D731AD0B89100CAD195 /* libicucore.dylib in Frameworks */,
+				D5362D711AD0B88300CAD195 /* libc++.dylib in Frameworks */,
+				D5362D6F1AD0B86D00CAD195 /* ImageIO.framework in Frameworks */,
+				D5362D6D1AD0B86400CAD195 /* GLKit.framework in Frameworks */,
+				D5362D6B1AD0B85B00CAD195 /* CoreText.framework in Frameworks */,
+				D5362D691AD0B85300CAD195 /* CoreLocation.framework in Frameworks */,
+				D5362D671AD0B84800CAD195 /* CoreData.framework in Frameworks */,
+				D5362D651AD0B83F00CAD195 /* AVFoundation.framework in Frameworks */,
+				D5362D611AD0B77F00CAD195 /* GoogleMaps.framework in Frameworks */,
 				43309AE34EFF8A1147E54079 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,8 +153,11 @@
 		42D4EDC51A9E7F02006AE807 /* WeatherAroundUs */ = {
 			isa = PBXGroup;
 			children = (
+				D5362D621AD0B7BA00CAD195 /* GoogleMaps.bundle */,
+				D5362D601AD0B77F00CAD195 /* GoogleMaps.framework */,
 				42D4EDC81A9E7F02006AE807 /* AppDelegate.swift */,
 				42D4EDCD1A9E7F02006AE807 /* ViewController.swift */,
+				42F62E781AD0B84900D494E6 /* CardView.swift */,
 				42F15D451AD07B35004D64EF /* CityDetailViewController.swift */,
 				42F15D4C1AD08CDA004D64EF /* CityListViewController.swift */,
 				42D4EDCF1A9E7F02006AE807 /* Main.storyboard */,
@@ -145,8 +198,9 @@
 		42F15D491AD08275004D64EF /* IMGs */ = {
 			isa = PBXGroup;
 			children = (
-				D54D64CC1AD08DBE003CBCD9 /* button_ListOfCities.png */,
+				42F62E741AD0B6EE00D494E6 /* ListOfCities.png */,
 				42F15D471AD08271004D64EF /* fake_map.png */,
+				42F62E761AD0B75100D494E6 /* Card.png */,
 			);
 			name = IMGs;
 			sourceTree = "<group>";
@@ -154,6 +208,18 @@
 		7AD6E77C29B17734BE286BBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D5362D7A1AD0B8B600CAD195 /* SystemConfiguration.framework */,
+				D5362D781AD0B8AC00CAD195 /* QuartzCore.framework */,
+				D5362D761AD0B8A400CAD195 /* OpenGLES.framework */,
+				D5362D741AD0B89C00CAD195 /* libz.dylib */,
+				D5362D721AD0B89100CAD195 /* libicucore.dylib */,
+				D5362D701AD0B88300CAD195 /* libc++.dylib */,
+				D5362D6E1AD0B86D00CAD195 /* ImageIO.framework */,
+				D5362D6C1AD0B86400CAD195 /* GLKit.framework */,
+				D5362D6A1AD0B85B00CAD195 /* CoreText.framework */,
+				D5362D681AD0B85300CAD195 /* CoreLocation.framework */,
+				D5362D661AD0B84800CAD195 /* CoreData.framework */,
+				D5362D641AD0B83F00CAD195 /* AVFoundation.framework */,
 				7061C7B48DE2F420FC0085AE /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -245,8 +311,10 @@
 				42D4EDD11A9E7F02006AE807 /* Main.storyboard in Resources */,
 				42D4EDD61A9E7F02006AE807 /* LaunchScreen.xib in Resources */,
 				42D4EDD31A9E7F02006AE807 /* Images.xcassets in Resources */,
+				D5362D631AD0B7BA00CAD195 /* GoogleMaps.bundle in Resources */,
+				42F62E771AD0B75100D494E6 /* Card.png in Resources */,
+				42F62E751AD0B6EE00D494E6 /* ListOfCities.png in Resources */,
 				42F15D481AD08271004D64EF /* fake_map.png in Resources */,
-				D54D64CD1AD08DBE003CBCD9 /* button_ListOfCities.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +384,7 @@
 				42D4EDCE1A9E7F02006AE807 /* ViewController.swift in Sources */,
 				42D4EDC91A9E7F02006AE807 /* AppDelegate.swift in Sources */,
 				42F15D4D1AD08CDA004D64EF /* CityListViewController.swift in Sources */,
+				42F62E791AD0B84900D494E6 /* CardView.swift in Sources */,
 				42D4EDCC1A9E7F02006AE807 /* WeatherAroundUs.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +509,10 @@
 			baseConfigurationReference = F0219F11709C93606E979962 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WeatherAroundUs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -451,6 +524,10 @@
 			baseConfigurationReference = 7C74A3FFE21D5AC2F375E634 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WeatherAroundUs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
