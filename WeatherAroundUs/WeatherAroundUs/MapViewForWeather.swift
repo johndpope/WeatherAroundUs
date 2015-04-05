@@ -10,9 +10,6 @@ import UIKit
 
 class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate{
 
-    // plane haven't took off
-    var planeStaticMode = true
-    
     var mapKMRatio:Double = 0
     
     var mapCenter: GMSMarker!
@@ -35,19 +32,17 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
     }
     
     func gotCurrentLocation(location: CLLocation) {
-        if planeStaticMode{
-            self.animateToLocation(location.coordinate)
-        }
+//            self.animateToLocation(location.coordinate)
     }
     
     
     func mapView(mapView: GMSMapView!, willMove gesture: Bool) {
-        
+        /*
         if gesture && planeStaticMode{
             // go to the center coordinate
             self.animateToLocation(UserLocation.centerLocation.coordinate)
             println(mapView.camera.zoom)
-        }
+        }*/
     }
     
     func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
@@ -61,7 +56,7 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
     
     func mapView(mapView: GMSMapView!, didLongPressAtCoordinate coordinate: CLLocationCoordinate2D) {
         var content = GMSMarker(position: coordinate)
-        content.icon = UIImage(named: "ButtonPlane")?.resize(CGSizeMake(25, 25))
+        content.icon = UIImage(named: "lightningAndRain")?.resize(CGSizeMake(25, 25))
         content.appearAnimation = kGMSMarkerAnimationPop
         content.snippet = "sdds"
         content.map = self
