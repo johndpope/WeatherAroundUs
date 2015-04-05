@@ -126,7 +126,7 @@
                                         <constraint firstAttribute="trailing" secondItem="mZU-Lk-mU3" secondAttribute="trailing" id="yCR-5T-RPZ"/>
                                     </constraints>
                                 </view>
-                                <blurEffect style="light"/>
+                                <blurEffect style="dark"/>
                             </visualEffectView>
                         </subviews>
                         <constraints>

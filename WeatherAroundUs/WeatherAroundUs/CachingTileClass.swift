@@ -36,7 +36,7 @@ class CachingTileClass: GMSSyncTileLayer {
             
         //check if has store data
             //
-        var str = "http://api.tiles.mapbox.com/v4/likedan5.ll70le15/\(zoom)/\(x)/\(y).png256?access_token=pk.eyJ1IjoibGlrZWRhbjUiLCJhIjoiaXJFLW9qbyJ9.SrX6tNNlKtUDVnure_XOAQ"
+        var str = "http://api.tiles.mapbox.com/v4/likedan5.60317478/\(zoom)/\(x)/\(y).png256?access_token=pk.eyJ1IjoibGlrZWRhbjUiLCJhIjoiaXJFLW9qbyJ9.SrX6tNNlKtUDVnure_XOAQ"
         var url = NSURL(string: str)
         
         cache.fetch(URL: url!).onSuccess { image in

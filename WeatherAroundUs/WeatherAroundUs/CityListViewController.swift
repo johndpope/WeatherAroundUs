@@ -42,7 +42,9 @@ class CityListViewController: UIViewController,UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         var lab = UILabel(frame: CGRectMake(0, 0, 100, 40))
-        lab.text    = self.items[indexPath.row]
+        lab.text = self.items[indexPath.row]
+        lab.textColor = UIColor.whiteColor()
+        cell.backgroundColor = UIColor.clearColor()
         cell.addSubview(lab)
         return cell
     }
