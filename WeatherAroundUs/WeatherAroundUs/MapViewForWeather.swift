@@ -13,13 +13,19 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
     var mapKMRatio:Double = 0
     
     var mapCenter: GMSMarker!
+    var currentLocation: CLLocation!
     
-    var zoom:Float = 15
+    var zoom:Float = 10
 
     func setup() {
-        var camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(-33.86, longitude: 151.23, zoom:zoom)
         
-        self.camera = camera
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if userDefaults.valueForKey("longitude") != nil{
+            var camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(userDefaults.valueForKey("latitude") as Double, longitude: userDefaults.valueForKey("longitude") as Double, zoom: zoom)
+            self.camera = camera
+            
+        }
+        
         self.mapType = kGMSTypeNone
         self.setMinZoom(7, maxZoom: 11)
         self.myLocationEnabled = false
@@ -29,20 +35,35 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
         var layer = CachingTileClass()
         layer.map = self
         UserLocation.delegate = self
+        
     }
     
     func gotCurrentLocation(location: CLLocation) {
-//            self.animateToLocation(location.coordinate)
+        if currentLocation == nil{
+            self.animateToLocation(location.coordinate)
+        }
+        currentLocation = location
+        // save user location in nsdefault
+        var userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setDouble(location.coordinate.longitude, forKey: "longitude")
+        userDefaults.setDouble(location.coordinate.latitude, forKey: "latitude")
+        userDefaults.synchronize()
+        
     }
     
     
     func mapView(mapView: GMSMapView!, willMove gesture: Bool) {
-        /*
-        if gesture && planeStaticMode{
-            // go to the center coordinate
-            self.animateToLocation(UserLocation.centerLocation.coordinate)
-            println(mapView.camera.zoom)
-        }*/
+        
+        var arr = WeatherMapCalculations.getWeatherAround(self.camera.target, zoom: self.camera.zoom)
+        for var index = 0; index < arr.count; index++
+        {
+            var content = GMSMarker(position: arr[index])
+            content.icon = UIImage(named: "rainning")?.resize(CGSizeMake(25, 25))
+            content.appearAnimation = kGMSMarkerAnimationPop
+            //content.snippet = "sdds"
+            content.map = self
+        }
+
     }
     
     func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
@@ -56,10 +77,11 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
     
     func mapView(mapView: GMSMapView!, didLongPressAtCoordinate coordinate: CLLocationCoordinate2D) {
         var content = GMSMarker(position: coordinate)
-        content.icon = UIImage(named: "lightningAndRain")?.resize(CGSizeMake(25, 25))
+        content.icon = UIImage(named: "rainning")?.resize(CGSizeMake(25, 25))
         content.appearAnimation = kGMSMarkerAnimationPop
-        content.snippet = "sdds"
+        //content.snippet = "sdds"
         content.map = self
+        
     }
 
     

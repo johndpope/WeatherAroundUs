@@ -22,13 +22,9 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var cityListAppearDragger: UIScreenEdgePanGestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: "cityListAppear:")
-        cityListAppearDragger.edges = UIRectEdge.Left
-        self.view.addGestureRecognizer(cityListAppearDragger)
-        
         var cityListDisappearDragger: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: "cityListDisappear:")
         self.cityList.addGestureRecognizer(cityListDisappearDragger)
-        println(UIFont.familyNames())
+
         
         var geocoder = GMSGeocoder()
         geocoder.reverseGeocodeCoordinate(CLLocationCoordinate2DMake(36.3, -120)) { (response, error) -> Void in
@@ -51,27 +47,6 @@ class ViewController: UIViewController, GMSMapViewDelegate {
             self.cityList.frame.origin = CGPointMake(0, 0)
             }, completion: { (bool) -> Void in
         })
-    }
-    
-    func cityListAppear(sender: UIScreenEdgePanGestureRecognizer) {
-        
-        var x = sender.translationInView(view).x
-        cityList.frame.origin = CGPointMake(x - cityList.frame.width, 0)
-
-        if cityList.frame.origin.x >= -50 {
-            sender.enabled = false
-        }
-        
-        if sender.state == UIGestureRecognizerState.Ended || sender.state == UIGestureRecognizerState.Failed ||
-            sender.state == UIGestureRecognizerState.Cancelled {
-        
-            UIView.animateWithDuration(Double(x / cityList.frame.width * 1), animations: { () -> Void in
-                self.cityList.frame.origin = CGPointMake(0, 0)
-                }, completion: { (bool) -> Void in
-                    sender.enabled = true
-            })
-
-        }
     }
     
     func cityListDisappear(sender: UIPanGestureRecognizer) {
