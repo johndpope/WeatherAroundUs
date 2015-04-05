@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4242E6C41AD1D69B00D7EB9A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4242E6C31AD1D69B00D7EB9A /* Alamofire.framework */; };
 		427BAFA51AD0E6F900C87BDE /* MapViewForWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427BAFA41AD0E6F900C87BDE /* MapViewForWeather.swift */; };
 		427BAFAA1AD0E71100C87BDE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427BAFA91AD0E71100C87BDE /* LocationManager.swift */; };
 		427BAFAC1AD0EBBF00C87BDE /* slayer11.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 427BAFAB1AD0EBBF00C87BDE /* slayer11.ttf */; };
@@ -54,27 +55,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		427BAF8F1AD0C4D100C87BDE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427BAF891AD0C4D100C87BDE /* Haneke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A095C9561980418C00CD0F4C;
-			remoteInfo = Haneke;
-		};
-		427BAF911AD0C4D100C87BDE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427BAF891AD0C4D100C87BDE /* Haneke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A095C9611980418C00CD0F4C;
-			remoteInfo = HanekeTests;
-		};
-		427BAF931AD0C4D100C87BDE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427BAF891AD0C4D100C87BDE /* Haneke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A0026E9A19C9BFBC004DE0C6;
-			remoteInfo = HanekeDemo;
-		};
 		42D4EDDC1A9E7F02006AE807 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 42D4EDBB1A9E7F02006AE807 /* Project object */;
@@ -85,8 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4242E6C31AD1D69B00D7EB9A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
 		427BAF711AD0C30B00C87BDE /* HanekeSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HanekeSwift.framework; path = "Pods/../build/Debug-iphoneos/Pods/HanekeSwift.framework"; sourceTree = "<group>"; };
-		427BAF891AD0C4D100C87BDE /* Haneke.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Haneke.xcodeproj; path = "HanekeSwift-master-2/Haneke.xcodeproj"; sourceTree = "<group>"; };
 		427BAFA41AD0E6F900C87BDE /* MapViewForWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewForWeather.swift; sourceTree = "<group>"; };
 		427BAFA91AD0E71100C87BDE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		427BAFAB1AD0EBBF00C87BDE /* slayer11.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = slayer11.ttf; sourceTree = "<group>"; };
@@ -146,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4242E6C41AD1D69B00D7EB9A /* Alamofire.framework in Frameworks */,
 				D5362D7B1AD0B8B600CAD195 /* SystemConfiguration.framework in Frameworks */,
 				D5362D791AD0B8AC00CAD195 /* QuartzCore.framework in Frameworks */,
 				D5362D771AD0B8A400CAD195 /* OpenGLES.framework in Frameworks */,
@@ -182,16 +163,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		427BAF8A1AD0C4D100C87BDE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				427BAF901AD0C4D100C87BDE /* Haneke.framework */,
-				427BAF921AD0C4D100C87BDE /* HanekeTests.xctest */,
-				427BAF941AD0C4D100C87BDE /* HanekeDemo.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		42D4EDBA1A9E7F02006AE807 = {
 			isa = PBXGroup;
 			children = (
@@ -215,7 +186,6 @@
 		42D4EDC51A9E7F02006AE807 /* WeatherAroundUs */ = {
 			isa = PBXGroup;
 			children = (
-				427BAF891AD0C4D100C87BDE /* Haneke.xcodeproj */,
 				D5362D621AD0B7BA00CAD195 /* GoogleMaps.bundle */,
 				D5362D601AD0B77F00CAD195 /* GoogleMaps.framework */,
 				42D4EDC81A9E7F02006AE807 /* AppDelegate.swift */,
@@ -297,6 +267,7 @@
 		7AD6E77C29B17734BE286BBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4242E6C31AD1D69B00D7EB9A /* Alamofire.framework */,
 				427BAF711AD0C30B00C87BDE /* HanekeSwift.framework */,
 				D5362D7A1AD0B8B600CAD195 /* SystemConfiguration.framework */,
 				D5362D781AD0B8AC00CAD195 /* QuartzCore.framework */,
@@ -385,12 +356,6 @@
 			mainGroup = 42D4EDBA1A9E7F02006AE807;
 			productRefGroup = 42D4EDC41A9E7F02006AE807 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 427BAF8A1AD0C4D100C87BDE /* Products */;
-					ProjectRef = 427BAF891AD0C4D100C87BDE /* Haneke.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				42D4EDC21A9E7F02006AE807 /* WeatherAroundUs */,
@@ -398,30 +363,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		427BAF901AD0C4D100C87BDE /* Haneke.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Haneke.framework;
-			remoteRef = 427BAF8F1AD0C4D100C87BDE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427BAF921AD0C4D100C87BDE /* HanekeTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = HanekeTests.xctest;
-			remoteRef = 427BAF911AD0C4D100C87BDE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427BAF941AD0C4D100C87BDE /* HanekeDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = HanekeDemo.app;
-			remoteRef = 427BAF931AD0C4D100C87BDE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		42D4EDC11A9E7F02006AE807 /* Resources */ = {
@@ -646,6 +587,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -653,9 +595,12 @@
 				);
 				INFOPLIST_FILE = WeatherAroundUs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "WeatherAroundUs/WeatherAroundUs-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "armv7s armv7 arm64";
 			};
 			name = Debug;
 		};
@@ -665,6 +610,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -672,8 +618,11 @@
 				);
 				INFOPLIST_FILE = WeatherAroundUs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "WeatherAroundUs/WeatherAroundUs-Bridging-Header.h";
+				VALID_ARCHS = "armv7s armv7 arm64";
 			};
 			name = Release;
 		};

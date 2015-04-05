@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_Alamofire 1
 #define COCOAPODS_VERSION_PATCH_Alamofire 4
 
+// JMImageCache
+#define COCOAPODS_POD_AVAILABLE_JMImageCache
+#define COCOAPODS_VERSION_MAJOR_JMImageCache 0
+#define COCOAPODS_VERSION_MINOR_JMImageCache 4
+#define COCOAPODS_VERSION_PATCH_JMImageCache 0
+
 // Spring
 #define COCOAPODS_POD_AVAILABLE_Spring
 #define COCOAPODS_VERSION_MAJOR_Spring 1

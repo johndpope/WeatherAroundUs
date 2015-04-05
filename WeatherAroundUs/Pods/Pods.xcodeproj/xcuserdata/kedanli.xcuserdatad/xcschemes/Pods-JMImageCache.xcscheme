@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "62C9907D942052F563EAA5ED"
-               BuildableName = "Spring.framework"
-               BlueprintName = "Pods-Spring"
+               BlueprintIdentifier = "83FAADF8FBB69145BFA2F2D8"
+               BuildableName = "JMImageCache.framework"
+               BlueprintName = "Pods-JMImageCache"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

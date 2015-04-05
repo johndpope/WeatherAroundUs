@@ -8,6 +8,6 @@ xcodeproj 'WeatherAroundUs'
 pod 'Spring', '~> 1.0.1'
 pod 'Alamofire', '~> 1.1'
 pod "SwiftyJSON", ">= 2.1.3"
-
+pod 'JMImageCache'
 use_frameworks!
 

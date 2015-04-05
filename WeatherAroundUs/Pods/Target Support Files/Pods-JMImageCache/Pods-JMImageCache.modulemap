@@ -1,0 +1,6 @@
+framework module JMImageCache {
+  umbrella header "Pods-JMImageCache-umbrella.h"
+
+  export *
+  module * { export * }
+}

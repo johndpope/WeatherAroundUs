@@ -1,15 +1,18 @@
 PODS:
   - Alamofire (1.1.4)
+  - JMImageCache (0.4.0)
   - Spring (1.0.2)
   - SwiftyJSON (2.1.3)
 
 DEPENDENCIES:
   - Alamofire (~> 1.1)
+  - JMImageCache
   - Spring (~> 1.0.1)
   - SwiftyJSON (>= 2.1.3)
 
 SPEC CHECKSUMS:
   Alamofire: 6a2cbaebe78a6d469bc55ee37f0a24ba22af76ac
+  JMImageCache: fac25eb168a25b29ac130fee6a6b17ea463c1d86
   Spring: b9c8a315befd509c531701f2edc4405ab9d00bad
   SwiftyJSON: a561c2a840121085bec8a2dfeac97a360fc66901
 

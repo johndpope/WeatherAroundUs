@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Haneke
+import JMImageCache
 
 class CachingTileClass: GMSSyncTileLayer {
     
@@ -31,20 +31,21 @@ class CachingTileClass: GMSSyncTileLayer {
         let semaphore = CachingTileClass.thread_local_storage.value
         
         dispatch_async(dispatch_get_main_queue()) {
-
-        let cache = Shared.dataCache
             
         //check if has store data
             //
         var str = "http://api.tiles.mapbox.com/v4/likedan5.60317478/\(zoom)/\(x)/\(y).png256?access_token=pk.eyJ1IjoibGlrZWRhbjUiLCJhIjoiaXJFLW9qbyJ9.SrX6tNNlKtUDVnure_XOAQ"
         var url = NSURL(string: str)
         
-        cache.fetch(URL: url!).onSuccess { image in
-            //println(image.description)
-            layerImg = UIImage(data: image)
-            
-            dispatch_semaphore_signal(semaphore!);
+        JMImageCache.sharedCache().imageForURL(url, completionBlock: { (image) -> Void in
+            if (image != nil) {
+                layerImg = image
+                dispatch_semaphore_signal(semaphore!);
             }
+            })
+
+            
+            
         }
         
         dispatch_semaphore_wait(semaphore!, DISPATCH_TIME_FOREVER);
