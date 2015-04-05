@@ -131,8 +131,3 @@ Optional({
 })
 
 */
-/*
-{"cod":"200","message":0.0024,"city":
-    {"id":5110302,"name":"Brooklyn","coord":{"lon":-73.949577,"lat":40.650101},"country":"US","population":0},"cnt":2,"list":[{"dt":1428249600,"temp":{"day":282.42,"min":281.81,"max":284.89,"night":281.81,"eve":284.51,"morn":282.42},"pressure":1033.26,"humidity":68,"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01d"}],"speed":3.21,"deg":238,"clouds":0},{"dt":1428336000,"temp":{"day":284.73,"min":278.17,"max":288.65,"night":284.86,"eve":288.65,"morn":278.17},"pressure":1036.05,"humidity":68,"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01d"}],"speed":1.7,"deg":225,"clouds":0}]
-}
-*/

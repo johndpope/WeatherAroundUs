@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "83FAADF8FBB69145BFA2F2D8"
-               BuildableName = "JMImageCache.framework"
-               BlueprintName = "Pods-JMImageCache"
+               BlueprintIdentifier = "FBD0EAAE7CDDBF353ED04EDF"
+               BuildableName = "TMCache.framework"
+               BlueprintName = "Pods-TMCache"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

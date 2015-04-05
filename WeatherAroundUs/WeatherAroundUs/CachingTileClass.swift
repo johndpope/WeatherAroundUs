@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import JMImageCache
+import TMCache
 
 class CachingTileClass: GMSSyncTileLayer {
     
@@ -37,13 +37,10 @@ class CachingTileClass: GMSSyncTileLayer {
         var str = "http://api.tiles.mapbox.com/v4/likedan5.60317478/\(zoom)/\(x)/\(y).png256?access_token=pk.eyJ1IjoibGlrZWRhbjUiLCJhIjoiaXJFLW9qbyJ9.SrX6tNNlKtUDVnure_XOAQ"
         var url = NSURL(string: str)
         
-        JMImageCache.sharedCache().imageForURL(url, completionBlock: { (image) -> Void in
-            if (image != nil) {
+            UIImage.imageFromURL(str, placeholder: UIImage(named: "Card")!, shouldCacheImage: true, closure: { (image) -> () in
                 layerImg = image
-                dispatch_semaphore_signal(semaphore!);
-            }
+                dispatch_semaphore_signal(semaphore!)
             })
-
             
             
         }

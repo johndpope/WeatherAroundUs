@@ -4,4 +4,4 @@
 
 #import <GoogleMaps/GoogleMaps.h>
 #import "ThreadingTrampolines.h"
-#import <JMImageCache/JMImageCache.h>
+#import <TMCache/TMCache.h>

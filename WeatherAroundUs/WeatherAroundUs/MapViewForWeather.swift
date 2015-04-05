@@ -99,7 +99,7 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
             var shouldSearch = true
             // check if should perform new search
             for location in searchedArea{
-                if thisLocation.distanceFromLocation(location) / 1000 < distance * 5 {
+                if thisLocation.distanceFromLocation(location) / 1000 < distance * 4 {
                     shouldSearch = false
                 }
             }
@@ -110,7 +110,7 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
                 
                 searchedArea.append(CLLocation(latitude: self.camera.target.longitude, longitude: self.camera.target.latitude))
                 
-                if searchedArea.count > 5{
+                if searchedArea.count > 4{
                     searchedArea.removeAtIndex(0)
                 }
             }

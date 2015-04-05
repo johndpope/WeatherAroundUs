@@ -9,17 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-JMImageCache.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Spring.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TMCache.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>122DEB3A8FF214F72DA9E3D4</key>
+		<key>08633EDC86236912131ACE52</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>62C9907D942052F563EAA5ED</key>
+		<key>117A547CE4BA36C88CA33DB6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83FAADF8FBB69145BFA2F2D8</key>
+		<key>64E9AD0863B518FF9D82FD75</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A4963C1D6489F5D4B1A8600B</key>
+		<key>CDBB1D637A1F2BC02971BCEC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A74F9C7E4085CC46989E9233</key>
+		<key>FBD0EAAE7CDDBF353ED04EDF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
