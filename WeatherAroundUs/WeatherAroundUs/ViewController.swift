@@ -9,10 +9,11 @@
 import UIKit
 import Spring
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GMSMapViewDelegate {
 
     @IBOutlet var cityList: UIView!
     @IBOutlet var menuButton: DesignableButton!
+    @IBOutlet var mapView: GMSMapView!
 
     var weatherCardList = [UIImageView]()
     
@@ -29,6 +30,11 @@ class ViewController: UIViewController {
         var cityListDisappearDragger: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: "cityListDisappear:")
         self.cityList.addGestureRecognizer(cityListDisappearDragger)
     
+
+        var layer = CachingTileClass()
+        layer.map = mapView
+        mapView.setMinZoom(7, maxZoom: 11)
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		427BAF951AD0C4EE00C87BDE /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427BAF901AD0C4D100C87BDE /* Haneke.framework */; };
+		427BAF9D1AD0CC5B00C87BDE /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427BAF9C1AD0CC5B00C87BDE /* WeatherService.swift */; };
 		42D4EDC91A9E7F02006AE807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D4EDC81A9E7F02006AE807 /* AppDelegate.swift */; };
 		42D4EDCC1A9E7F02006AE807 /* WeatherAroundUs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42D4EDCA1A9E7F02006AE807 /* WeatherAroundUs.xcdatamodeld */; };
 		42D4EDCE1A9E7F02006AE807 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D4EDCD1A9E7F02006AE807 /* ViewController.swift */; };
@@ -20,6 +22,9 @@
 		42F62E751AD0B6EE00D494E6 /* ListOfCities.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F62E741AD0B6EE00D494E6 /* ListOfCities.png */; };
 		42F62E771AD0B75100D494E6 /* Card.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F62E761AD0B75100D494E6 /* Card.png */; };
 		42F62E791AD0B84900D494E6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F62E781AD0B84900D494E6 /* CardView.swift */; };
+		42F62E811AD0BFD400D494E6 /* CachingTileClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F62E801AD0BFD400D494E6 /* CachingTileClass.swift */; };
+		42F62E851AD0BFF200D494E6 /* ThreadLocalSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F62E821AD0BFF200D494E6 /* ThreadLocalSlot.swift */; };
+		42F62E861AD0BFF200D494E6 /* ThreadingTrampolines.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F62E841AD0BFF200D494E6 /* ThreadingTrampolines.m */; };
 		43309AE34EFF8A1147E54079 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7061C7B48DE2F420FC0085AE /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D5362D611AD0B77F00CAD195 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D601AD0B77F00CAD195 /* GoogleMaps.framework */; };
 		D5362D631AD0B7BA00CAD195 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D5362D621AD0B7BA00CAD195 /* GoogleMaps.bundle */; };
@@ -35,12 +40,30 @@
 		D5362D771AD0B8A400CAD195 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D761AD0B8A400CAD195 /* OpenGLES.framework */; };
 		D5362D791AD0B8AC00CAD195 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D781AD0B8AC00CAD195 /* QuartzCore.framework */; };
 		D5362D7B1AD0B8B600CAD195 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5362D7A1AD0B8B600CAD195 /* SystemConfiguration.framework */; };
-		D54D64CD1AD08DBE003CBCD9 /* button_ListOfCities.png in Resources */ = {isa = PBXBuildFile; fileRef = D54D64CC1AD08DBE003CBCD9 /* button_ListOfCities.png */; };
-
-
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		427BAF8F1AD0C4D100C87BDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 427BAF891AD0C4D100C87BDE /* Haneke.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A095C9561980418C00CD0F4C;
+			remoteInfo = Haneke;
+		};
+		427BAF911AD0C4D100C87BDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 427BAF891AD0C4D100C87BDE /* Haneke.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A095C9611980418C00CD0F4C;
+			remoteInfo = HanekeTests;
+		};
+		427BAF931AD0C4D100C87BDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 427BAF891AD0C4D100C87BDE /* Haneke.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A0026E9A19C9BFBC004DE0C6;
+			remoteInfo = HanekeDemo;
+		};
 		42D4EDDC1A9E7F02006AE807 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 42D4EDBB1A9E7F02006AE807 /* Project object */;
@@ -51,6 +74,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		427BAF711AD0C30B00C87BDE /* HanekeSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HanekeSwift.framework; path = "Pods/../build/Debug-iphoneos/Pods/HanekeSwift.framework"; sourceTree = "<group>"; };
+		427BAF891AD0C4D100C87BDE /* Haneke.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Haneke.xcodeproj; path = "HanekeSwift-master-2/Haneke.xcodeproj"; sourceTree = "<group>"; };
+		427BAF9C1AD0CC5B00C87BDE /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		42D4EDC31A9E7F02006AE807 /* WeatherAroundUs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherAroundUs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D4EDC71A9E7F02006AE807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42D4EDC81A9E7F02006AE807 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +94,11 @@
 		42F62E741AD0B6EE00D494E6 /* ListOfCities.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListOfCities.png; sourceTree = "<group>"; };
 		42F62E761AD0B75100D494E6 /* Card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Card.png; sourceTree = "<group>"; };
 		42F62E781AD0B84900D494E6 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		42F62E7C1AD0BA9100D494E6 /* WeatherAroundUs-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeatherAroundUs-Bridging-Header.h"; sourceTree = "<group>"; };
+		42F62E801AD0BFD400D494E6 /* CachingTileClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachingTileClass.swift; sourceTree = "<group>"; };
+		42F62E821AD0BFF200D494E6 /* ThreadLocalSlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadLocalSlot.swift; sourceTree = "<group>"; };
+		42F62E831AD0BFF200D494E6 /* ThreadingTrampolines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadingTrampolines.h; sourceTree = "<group>"; };
+		42F62E841AD0BFF200D494E6 /* ThreadingTrampolines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadingTrampolines.m; sourceTree = "<group>"; };
 		7061C7B48DE2F420FC0085AE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C74A3FFE21D5AC2F375E634 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D5362D601AD0B77F00CAD195 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = ../GoogleMaps.framework; sourceTree = "<group>"; };
@@ -84,8 +115,6 @@
 		D5362D761AD0B8A400CAD195 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		D5362D781AD0B8AC00CAD195 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D5362D7A1AD0B8B600CAD195 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		D54D64CC1AD08DBE003CBCD9 /* button_ListOfCities.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_ListOfCities.png; sourceTree = "<group>"; };
-
 		F0219F11709C93606E979962 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				427BAF951AD0C4EE00C87BDE /* Haneke.framework in Frameworks */,
 				D5362D7B1AD0B8B600CAD195 /* SystemConfiguration.framework in Frameworks */,
 				D5362D791AD0B8AC00CAD195 /* QuartzCore.framework in Frameworks */,
 				D5362D771AD0B8A400CAD195 /* OpenGLES.framework in Frameworks */,
@@ -130,6 +160,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		427BAF8A1AD0C4D100C87BDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				427BAF901AD0C4D100C87BDE /* Haneke.framework */,
+				427BAF921AD0C4D100C87BDE /* HanekeTests.xctest */,
+				427BAF941AD0C4D100C87BDE /* HanekeDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		42D4EDBA1A9E7F02006AE807 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +193,7 @@
 		42D4EDC51A9E7F02006AE807 /* WeatherAroundUs */ = {
 			isa = PBXGroup;
 			children = (
+				427BAF891AD0C4D100C87BDE /* Haneke.xcodeproj */,
 				D5362D621AD0B7BA00CAD195 /* GoogleMaps.bundle */,
 				D5362D601AD0B77F00CAD195 /* GoogleMaps.framework */,
 				42D4EDC81A9E7F02006AE807 /* AppDelegate.swift */,
@@ -160,12 +201,15 @@
 				42F62E781AD0B84900D494E6 /* CardView.swift */,
 				42F15D451AD07B35004D64EF /* CityDetailViewController.swift */,
 				42F15D4C1AD08CDA004D64EF /* CityListViewController.swift */,
+				427BAF9C1AD0CC5B00C87BDE /* WeatherService.swift */,
+				42F62E871AD0BFFD00D494E6 /* MapTile */,
 				42D4EDCF1A9E7F02006AE807 /* Main.storyboard */,
 				42F15D491AD08275004D64EF /* IMGs */,
 				42D4EDD21A9E7F02006AE807 /* Images.xcassets */,
 				42D4EDD41A9E7F02006AE807 /* LaunchScreen.xib */,
 				42D4EDCA1A9E7F02006AE807 /* WeatherAroundUs.xcdatamodeld */,
 				42D4EDC61A9E7F02006AE807 /* Supporting Files */,
+				42F62E7C1AD0BA9100D494E6 /* WeatherAroundUs-Bridging-Header.h */,
 			);
 			path = WeatherAroundUs;
 			sourceTree = "<group>";
@@ -205,9 +249,21 @@
 			name = IMGs;
 			sourceTree = "<group>";
 		};
+		42F62E871AD0BFFD00D494E6 /* MapTile */ = {
+			isa = PBXGroup;
+			children = (
+				42F62E801AD0BFD400D494E6 /* CachingTileClass.swift */,
+				42F62E821AD0BFF200D494E6 /* ThreadLocalSlot.swift */,
+				42F62E831AD0BFF200D494E6 /* ThreadingTrampolines.h */,
+				42F62E841AD0BFF200D494E6 /* ThreadingTrampolines.m */,
+			);
+			name = MapTile;
+			sourceTree = "<group>";
+		};
 		7AD6E77C29B17734BE286BBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				427BAF711AD0C30B00C87BDE /* HanekeSwift.framework */,
 				D5362D7A1AD0B8B600CAD195 /* SystemConfiguration.framework */,
 				D5362D781AD0B8AC00CAD195 /* QuartzCore.framework */,
 				D5362D761AD0B8A400CAD195 /* OpenGLES.framework */,
@@ -295,6 +351,12 @@
 			mainGroup = 42D4EDBA1A9E7F02006AE807;
 			productRefGroup = 42D4EDC41A9E7F02006AE807 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 427BAF8A1AD0C4D100C87BDE /* Products */;
+					ProjectRef = 427BAF891AD0C4D100C87BDE /* Haneke.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				42D4EDC21A9E7F02006AE807 /* WeatherAroundUs */,
@@ -302,6 +364,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		427BAF901AD0C4D100C87BDE /* Haneke.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Haneke.framework;
+			remoteRef = 427BAF8F1AD0C4D100C87BDE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		427BAF921AD0C4D100C87BDE /* HanekeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = HanekeTests.xctest;
+			remoteRef = 427BAF911AD0C4D100C87BDE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		427BAF941AD0C4D100C87BDE /* HanekeDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = HanekeDemo.app;
+			remoteRef = 427BAF931AD0C4D100C87BDE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		42D4EDC11A9E7F02006AE807 /* Resources */ = {
@@ -380,10 +466,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				427BAF9D1AD0CC5B00C87BDE /* WeatherService.swift in Sources */,
 				42F15D461AD07B35004D64EF /* CityDetailViewController.swift in Sources */,
 				42D4EDCE1A9E7F02006AE807 /* ViewController.swift in Sources */,
 				42D4EDC91A9E7F02006AE807 /* AppDelegate.swift in Sources */,
 				42F15D4D1AD08CDA004D64EF /* CityListViewController.swift in Sources */,
+				42F62E811AD0BFD400D494E6 /* CachingTileClass.swift in Sources */,
+				42F62E851AD0BFF200D494E6 /* ThreadLocalSlot.swift in Sources */,
+				42F62E861AD0BFF200D494E6 /* ThreadingTrampolines.m in Sources */,
 				42F62E791AD0B84900D494E6 /* CardView.swift in Sources */,
 				42D4EDCC1A9E7F02006AE807 /* WeatherAroundUs.xcdatamodeld in Sources */,
 			);
@@ -509,13 +599,17 @@
 			baseConfigurationReference = F0219F11709C93606E979962 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods",
 				);
 				INFOPLIST_FILE = WeatherAroundUs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeatherAroundUs/WeatherAroundUs-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -524,13 +618,16 @@
 			baseConfigurationReference = 7C74A3FFE21D5AC2F375E634 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods",
 				);
 				INFOPLIST_FILE = WeatherAroundUs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeatherAroundUs/WeatherAroundUs-Bridging-Header.h";
 			};
 			name = Release;
 		};
