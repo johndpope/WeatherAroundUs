@@ -48,33 +48,19 @@ class WeatherMapCalculations: NSObject {
     
     // get the weather around according to map center and zoom
     class func getWeatherAround(mapCenter:CLLocationCoordinate2D, zoom: Float)->[CLLocationCoordinate2D]{
-        let distance = WeatherMapCalculations.getTheDistanceBasedOnZoom(zoom)
-        println(distance)
+        let distance = WeatherMapCalculations.getTheDistanceBasedOnZoom(zoom) * 2
         var locationArray = [CLLocationCoordinate2D]()
         //scan upper screen
-        for var y = 0; y < 6; y++ {
+        for var y = 0; y < 3; y++ {
             //scan west
-            for var x = 0; x < 6; x++ {
+            for var x = 0; x < 3; x++ {
                 locationArray.append(WeatherMapCalculations.getDestinationPointWithDistanceAndLongitudeAndLatitude(mapCenter, distanceX: distance * Double(x), distanceY: distance * Double(y)))
-            }
-            //scan east
-            for var x = -1; x > -6; x-- {
-                locationArray.append(WeatherMapCalculations.getDestinationPointWithDistanceAndLongitudeAndLatitude(mapCenter, distanceX: distance * Double(x), distanceY: distance * Double(y)))
+                    locationArray.append(WeatherMapCalculations.getDestinationPointWithDistanceAndLongitudeAndLatitude(mapCenter, distanceX: distance * Double(-x), distanceY: distance * Double(y)))
+                    locationArray.append(WeatherMapCalculations.getDestinationPointWithDistanceAndLongitudeAndLatitude(mapCenter, distanceX: distance * Double(x), distanceY: distance * Double(-y)))
+                    locationArray.append(WeatherMapCalculations.getDestinationPointWithDistanceAndLongitudeAndLatitude(mapCenter, distanceX: distance * Double(-x), distanceY: distance * Double(-y)))
             }
         }
-        //scan lower screen
-        for var y = 1; y < 6; y++ {
-            //scan west
-            for var x = 0; x < 6; x++ {
-                locationArray.append(WeatherMapCalculations.getDestinationPointWithDistanceAndLongitudeAndLatitude(mapCenter, distanceX: distance * Double(x), distanceY: distance * Double(-y)))
-            }
-            //scan east
-            for var x = -1; x > -6; x-- {
-                locationArray.append(WeatherMapCalculations.getDestinationPointWithDistanceAndLongitudeAndLatitude(mapCenter, distanceX: distance * Double(x), distanceY: distance * Double(-y)))
-            }
-
-        }
-
+       
         return locationArray
     }
     

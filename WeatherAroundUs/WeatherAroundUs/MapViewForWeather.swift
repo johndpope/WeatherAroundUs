@@ -8,15 +8,21 @@
 
 import UIKit
 
-class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate{
+class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate, WeatherInformationDelegate{
 
     var mapKMRatio:Double = 0
     
     var mapCenter: GMSMarker!
+    
     var currentLocation: CLLocation!
     
-    var zoom:Float = 10
-
+    var weather = WeatherInformation()
+    
+    var weatherIcons = [String: GMSMarker]()
+    var searchedArea = [CLLocation]()
+    
+    var zoom:Float = 11
+    
     func setup() {
         
         let userDefaults = NSUserDefaults.standardUserDefaults()
@@ -36,6 +42,8 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
         layer.map = self
         UserLocation.delegate = self
         
+        weather.delegate = self
+        
     }
     
     func gotCurrentLocation(location: CLLocation) {
@@ -51,20 +59,65 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
         
     }
     
+    func gotOneNewWeatherData(cityID: String) {
+        
+        //println(((((weather.citiesAroundDict[cityID] as [String: AnyObject])["city"] as [String: AnyObject]) ["coord"] as [String: AnyObject])["lat"]! as NSString).doubleValue)
+        
+        let latitude = (((weather.citiesAroundDict[cityID] as [String: AnyObject])["city"] as [String: AnyObject]) ["coord"] as [String: AnyObject])["lat"]! as Double
+        let longitude = (((weather.citiesAroundDict[cityID] as [String: AnyObject])["city"] as [String: AnyObject]) ["coord"] as [String: AnyObject])["lon"]! as Double
+        
+        
+        println(latitude)
+        println(longitude)
+        
+
+        var marker = GMSMarker(position: CLLocationCoordinate2DMake(latitude
+        , longitude))
+        marker.icon = UIImage(named: "sunrainning")?.resize(CGSizeMake(25, 25))
+        marker.appearAnimation = kGMSMarkerAnimationPop
+        //content.snippet = "sdds"
+        marker.map = self
+        
+        weatherIcons.updateValue(marker, forKey: cityID)
+    }
+    
+    func removeOneCity(cityID: String){
+        weatherIcons[cityID]!.map = nil
+        weatherIcons.removeValueForKey(cityID)
+    }
     
     func mapView(mapView: GMSMapView!, willMove gesture: Bool) {
         
-        var arr = WeatherMapCalculations.getWeatherAround(self.camera.target, zoom: self.camera.zoom)
-        for var index = 0; index < arr.count; index++
-        {
-            var content = GMSMarker(position: arr[index])
-            content.icon = UIImage(named: "rainning")?.resize(CGSizeMake(25, 25))
-            content.appearAnimation = kGMSMarkerAnimationPop
-            //content.snippet = "sdds"
-            content.map = self
+        
+        if gesture {
+            
+            
+            let thisLocation = CLLocation(latitude: self.camera.target.longitude, longitude: self.camera.target.latitude)
+            
+            let distance = WeatherMapCalculations.getTheDistanceBasedOnZoom(self.camera.zoom)
+            
+            var shouldSearch = true
+            // check if should perform new search
+            for location in searchedArea{
+                if thisLocation.distanceFromLocation(location) / 1000 < distance * 5 {
+                    shouldSearch = false
+                }
+            }
+            
+            if shouldSearch{
+                // update weather info
+                weather.getLocalWeatherInformation(WeatherMapCalculations.getWeatherAround(self.camera.target, zoom: self.camera.zoom))
+                
+                searchedArea.append(CLLocation(latitude: self.camera.target.longitude, longitude: self.camera.target.latitude))
+                
+                if searchedArea.count > 5{
+                    searchedArea.removeAtIndex(0)
+                }
+            }
         }
 
     }
+    
     
     func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
         // move the prebase if in add base mode
@@ -72,7 +125,16 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
     }
     
     func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
-        
+        //zoom chnaged
+        if zoom != self.camera.zoom{
+            for city in weather.citiesAround{
+                weatherIcons[city]!.map = nil
+            }
+            weatherIcons.removeAll(keepCapacity: false)
+            weather.removeAllCities()
+            searchedArea.removeAll(keepCapacity: false)
+            zoom = self.camera.zoom
+        }
     }
     
     func mapView(mapView: GMSMapView!, didLongPressAtCoordinate coordinate: CLLocationCoordinate2D) {
