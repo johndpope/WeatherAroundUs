@@ -33,8 +33,13 @@ class ViewController: UIViewController, GMSMapViewDelegate {
 
         var layer = CachingTileClass()
         layer.map = mapView
+        mapView.mapType = kGMSTypeNone
         mapView.setMinZoom(7, maxZoom: 11)
-        //APIkey:AIzaSyDLBiMd9DqNtqeRc2DMtoeYL4hg53wUEw8
+        
+        var geocoder = GMSGeocoder()
+        geocoder.reverseGeocodeCoordinate(CLLocationCoordinate2DMake(36.3, -120)) { (response, error) -> Void in
+            println(response.results())
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
     
