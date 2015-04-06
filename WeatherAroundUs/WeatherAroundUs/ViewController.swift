@@ -26,10 +26,7 @@ class ViewController: UIViewController, GMSMapViewDelegate {
         self.cityList.addGestureRecognizer(cityListDisappearDragger)
 
         
-        var geocoder = GMSGeocoder()
-        geocoder.reverseGeocodeCoordinate(CLLocationCoordinate2DMake(36.3, -120)) { (response, error) -> Void in
-            println(response.results())
-        }
+       
         // Do any additional setup after loading the view, typically from a nib.
     }
     

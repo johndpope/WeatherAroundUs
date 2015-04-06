@@ -33,7 +33,7 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
         }
         
         self.mapType = kGMSTypeNone
-        self.setMinZoom(7, maxZoom: 11)
+        self.setMinZoom(7, maxZoom: 13)
         self.myLocationEnabled = false
         self.delegate = self
         self.mapType = kGMSTypeNone
@@ -61,15 +61,8 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
     
     func gotOneNewWeatherData(cityID: String) {
         
-        //println(((((weather.citiesAroundDict[cityID] as [String: AnyObject])["city"] as [String: AnyObject]) ["coord"] as [String: AnyObject])["lat"]! as NSString).doubleValue)
-        
         let latitude = (((weather.citiesAroundDict[cityID] as [String: AnyObject])["city"] as [String: AnyObject]) ["coord"] as [String: AnyObject])["lat"]! as Double
         let longitude = (((weather.citiesAroundDict[cityID] as [String: AnyObject])["city"] as [String: AnyObject]) ["coord"] as [String: AnyObject])["lon"]! as Double
-        
-        
-        println(latitude)
-        println(longitude)
-        
 
         var marker = GMSMarker(position: CLLocationCoordinate2DMake(latitude
         , longitude))
@@ -86,38 +79,6 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
         weatherIcons.removeValueForKey(cityID)
     }
     
-    func mapView(mapView: GMSMapView!, willMove gesture: Bool) {
-        
-        
-        if gesture {
-            
-            
-            let thisLocation = CLLocation(latitude: self.camera.target.longitude, longitude: self.camera.target.latitude)
-            
-            let distance = WeatherMapCalculations.getTheDistanceBasedOnZoom(self.camera.zoom)
-            
-            var shouldSearch = true
-            // check if should perform new search
-            for location in searchedArea{
-                if thisLocation.distanceFromLocation(location) / 1000 < distance * 4 {
-                    shouldSearch = false
-                }
-            }
-            
-            if shouldSearch{
-                // update weather info
-                weather.getLocalWeatherInformation(WeatherMapCalculations.getWeatherAround(self.camera.target, zoom: self.camera.zoom))
-                
-                searchedArea.append(CLLocation(latitude: self.camera.target.longitude, longitude: self.camera.target.latitude))
-                
-                if searchedArea.count > 4{
-                    searchedArea.removeAtIndex(0)
-                }
-            }
-        }
-
-    }
-    
     
     func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
         // move the prebase if in add base mode
@@ -125,8 +86,35 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
     }
     
     func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
+        
+        //move
+        
+        let thisLocation = CLLocation(latitude: self.camera.target.longitude, longitude: self.camera.target.latitude)
+        
+        let distance = WeatherMapCalculations.getTheDistanceBasedOnZoom(self.camera.zoom)
+        
+        var shouldSearch = true
+        // check if should perform new search
+        for location in searchedArea{
+            if thisLocation.distanceFromLocation(location) / 1000 < distance * 3 {
+                shouldSearch = false
+            }
+        }
+        
+        if shouldSearch{
+            // update weather info
+            weather.getLocalWeatherInformation(WeatherMapCalculations.getWeatherAround(self.camera.target, zoom: self.camera.zoom))
+            
+            searchedArea.append(CLLocation(latitude: self.camera.target.longitude, longitude: self.camera.target.latitude))
+            
+            if searchedArea.count > 3{
+                searchedArea.removeAtIndex(0)
+            }
+        }
+
+        
         //zoom chnaged
-        if zoom != self.camera.zoom{
+        if abs(zoom - self.camera.zoom) > 1{
             for city in weather.citiesAround{
                 weatherIcons[city]!.map = nil
             }
@@ -134,6 +122,11 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
             weather.removeAllCities()
             searchedArea.removeAll(keepCapacity: false)
             zoom = self.camera.zoom
+            
+            //update weather
+            weather.getLocalWeatherInformation(WeatherMapCalculations.getWeatherAround(self.camera.target, zoom: self.camera.zoom))
+            
+            searchedArea.append(CLLocation(latitude: self.camera.target.longitude, longitude: self.camera.target.latitude))
         }
     }
     

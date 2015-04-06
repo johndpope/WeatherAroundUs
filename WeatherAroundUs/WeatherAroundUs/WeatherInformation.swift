@@ -21,18 +21,27 @@ class WeatherInformation: NSObject {
 
     let maxCityNum = 30
     
+    var ongoingRequest = 0
+    let maxRequest = 50
+    
     var delegate : WeatherInformationDelegate?
     
     func getLocalWeatherInformation(locations: [CLLocationCoordinate2D]){
         
+        if ongoingRequest < maxRequest{
+        
         for location in locations {
             
-            var req = Alamofire.request(.GET, NSURL(string: "http://api.openweathermap.org/data/2.5/forecast/daily?lat=\(location.latitude)&lon=\(location.longitude)&cnt=2&mode=json")!).responseJSON { (_, _, JSON, _) in
+            ongoingRequest++
+            var req = Alamofire.request(.GET, NSURL(string: "http://api.openweathermap.org/data/2.5/forecast/daily?lat=\(location.latitude)&lon=\(location.longitude)&cnt=2&mode=json")!).responseJSON { (_, response, JSON, error) in
                 
+                println(response)
+                println(error)
+                self.ongoingRequest--
                 if JSON != nil {
                     var result = JSON as [String : AnyObject]
                     let id: AnyObject! = (result["city"] as [String : AnyObject]) ["id"]
-                    println(id)
+                    println(self.ongoingRequest)
                     if self.citiesAroundDict["\(id)"] == nil {
                         self.citiesAroundDict.updateValue(result, forKey: "\(id)")
                         self.citiesAround.append("\(id)")
@@ -46,6 +55,7 @@ class WeatherInformation: NSObject {
                 }
             }
             
+        }
         }
         
     }

@@ -52,23 +52,13 @@ class WeatherMapCalculations: NSObject {
         var locationArray = [CLLocationCoordinate2D]()
         //scan upper screen
         
-        for var y = 0; y < 3; y++ {
+        for var y:Double = 0; y < 3; y += 1 {
             //scan west
-            for var x = 0; x < 3; x++ {
+            for var x:Double = 0; x < 3; x += 1 {
                 locationArray.append(WeatherMapCalculations.getDestinationPointWithDistanceAndLongitudeAndLatitude(mapCenter, distanceX: distance * Double(x), distanceY: distance * Double(y)))
                 locationArray.append(WeatherMapCalculations.getDestinationPointWithDistanceAndLongitudeAndLatitude(mapCenter, distanceX: distance * Double(-x), distanceY: distance * Double(y)))
                 locationArray.append(WeatherMapCalculations.getDestinationPointWithDistanceAndLongitudeAndLatitude(mapCenter, distanceX: distance * Double(x), distanceY: distance * Double(-y)))
                 locationArray.append(WeatherMapCalculations.getDestinationPointWithDistanceAndLongitudeAndLatitude(mapCenter, distanceX: distance * Double(-x), distanceY: distance * Double(-y)))
-            }
-        }
-        
-        for var y = 0; y < 3; y++ {
-            //scan west
-            for var x = 0; x < 3; x++ {
-                locationArray.append(WeatherMapCalculations.getDestinationPointWithDistanceAndLongitudeAndLatitude(mapCenter, distanceX: distance * Double(x), distanceY: distance * Double(y)))
-                    locationArray.append(WeatherMapCalculations.getDestinationPointWithDistanceAndLongitudeAndLatitude(mapCenter, distanceX: distance * Double(-x), distanceY: distance * Double(y)))
-                    locationArray.append(WeatherMapCalculations.getDestinationPointWithDistanceAndLongitudeAndLatitude(mapCenter, distanceX: distance * Double(x), distanceY: distance * Double(-y)))
-                    locationArray.append(WeatherMapCalculations.getDestinationPointWithDistanceAndLongitudeAndLatitude(mapCenter, distanceX: distance * Double(-x), distanceY: distance * Double(-y)))
             }
         }
        
