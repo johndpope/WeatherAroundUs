@@ -16,12 +16,10 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
     
     var currentLocation: CLLocation!
     
-    var weather = WeatherInformation()
-    
     var weatherIcons = [String: GMSMarker]()
     var searchedArea = [CLLocation]()
     
-    var zoom:Float = 11
+    var zoom:Float = 12
     
     func setup() {
         
@@ -42,7 +40,7 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
         layer.map = self
         UserLocation.delegate = self
         
-        weather.delegate = self
+        WeatherInfo.weatherDelegate = self
         
     }
     
@@ -64,22 +62,39 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
         // update city if doesn't exist
         if weatherIcons[cityID] == nil{
             
-            self.weather.citiesAround.append(cityID)
+            WeatherInfo.citiesAround.insert(cityID, atIndex: 0)
             
-            if self.weather.citiesAround.count > self.weather.maxCityNum{
-                self.weatherIcons.removeValueForKey(self.weather.citiesAround[0])
-                self.weather.citiesAround.removeAtIndex(0)
+            if WeatherInfo.citiesAround.count > WeatherInfo.maxCityNum{
+                self.weatherIcons.removeValueForKey(WeatherInfo.citiesAround[0])
+                WeatherInfo.citiesAround.removeLast()
             }
+            WeatherInfo.updateIconListDelegate?.updateIconList!()
+            
             var marker = GMSMarker(position: CLLocationCoordinate2DMake(latitude
                 , longitude))
             marker.icon = UIImage(named: "sunrainning")?.resize(CGSizeMake(25, 25))
             marker.appearAnimation = kGMSMarkerAnimationPop
             marker.map = self
+            marker.title = cityID
             
             weatherIcons.updateValue(marker, forKey: cityID)
         }
     }
+    
+    func getImageAccordingToZoom(cityID: String)->UIImage{
+        if zoom > 12.5{
+            return UIImage(named: "sunrainning")!.resize(CGSizeMake(50, 50))
+        }else if zoom < 11{
+            return UIImage(named: "sunrainning")!.resize(CGSizeMake(15, 15))
+        }else{
+            return UIImage(named: "sunrainning")!.resize(CGSizeMake(25, 25))
+        }
+    }
 
+    func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
+        println(marker.title)
+        return true
+    }
     
     func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
         // move the prebase if in add base mode
@@ -103,7 +118,7 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
             
             if shouldSearch{
                 // update weather info
-                weather.getLocalWeatherInformation(self.camera.target)
+                WeatherInfo.getLocalWeatherInformation(self.camera.target)
                 
                 searchedArea.append(CLLocation(latitude: self.camera.target.longitude, longitude: self.camera.target.latitude))
                 

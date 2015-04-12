@@ -41,7 +41,6 @@ class CachingTileClass: GMSSyncTileLayer {
             let cache = Shared.dataCache
             
             cache.fetch(URL: url!).onSuccess { image in
-                //println(image.description)
                 layerImg = UIImage(data: image)
                 
                 dispatch_semaphore_signal(semaphore!);

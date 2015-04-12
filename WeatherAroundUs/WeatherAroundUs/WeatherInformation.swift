@@ -13,10 +13,11 @@ import Alamofire
     optional func gotOneNewWeatherData(cityID: String, latitude:CLLocationDegrees, longitude:CLLocationDegrees)
 }
 
-@objc protocol WeatherInternet: class {
-    optional func internetBusy()
-    optional func internetBackToNormal()
+@objc protocol UpdateIconListDelegate: class {
+    optional func updateIconList()
 }
+
+var WeatherInfo: WeatherInformation = WeatherInformation()
 
 class WeatherInformation: NSObject {
     
@@ -25,26 +26,17 @@ class WeatherInformation: NSObject {
 
     let maxCityNum = 30
     
-    var ongoingRequest = 0
-    let maxRequest = 50
-    
-    var delegate : WeatherInformationDelegate?
-    var delegate1 : WeatherInternet?
+    var weatherDelegate : WeatherInformationDelegate?
+    var updateIconListDelegate : UpdateIconListDelegate?
 
     func getLocalWeatherInformation(location: CLLocationCoordinate2D){
         
-        println("call")
-        
-        var req = Alamofire.request(.GET, NSURL(string: "http://api.openweathermap.org/data/2.5/find?lat=\(location.latitude)&lon=\(location.longitude)&cnt=6&mode=json")!).responseJSON { (_, response, JSON, error) in
+        var req = Alamofire.request(.GET, NSURL(string: "http://api.openweathermap.org/data/2.5/find?lat=\(location.latitude)&lon=\(location.longitude)&cnt=10&mode=json")!).responseJSON { (_, response, JSON, error) in
             
             if error == nil && JSON != nil {
                 
                 
                 var result = JSON as! [String : AnyObject]
-                
-                
-                println(result.description)
-
                 
                 let list:[AnyObject] = result["list"] as! [AnyObject]
                 
@@ -52,7 +44,7 @@ class WeatherInformation: NSObject {
                     
                     let id: Int = (city as! [String : AnyObject]) ["id"] as! Int
                     
-                    self.delegate?.gotOneNewWeatherData!("\(id)", latitude: (((city as! [String : AnyObject]) ["coord"] as! [String: AnyObject])["lat"]! as! Double), longitude: (((city as! [String : AnyObject]) ["coord"] as! [String: AnyObject])["lon"]! as! Double))
+                    self.weatherDelegate?.gotOneNewWeatherData!("\(id)", latitude: (((city as! [String : AnyObject]) ["coord"] as! [String: AnyObject])["lat"]! as! Double), longitude: (((city as! [String : AnyObject]) ["coord"] as! [String: AnyObject])["lon"]! as! Double))
                     
                     // first time weather data
                     if self.citiesAroundDict["\(id)"] == nil {
@@ -61,12 +53,6 @@ class WeatherInformation: NSObject {
                     }
                 }
                 
-                //update icon
-                if self.ongoingRequest > 0{
-                    self.delegate1?.internetBusy!()
-                }else{
-                    self.delegate1?.internetBackToNormal!()
-                }
             }
             
             

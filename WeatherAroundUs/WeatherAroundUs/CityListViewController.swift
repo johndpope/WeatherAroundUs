@@ -8,16 +8,19 @@
 
 import UIKit
 
-class CityListViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class CityListViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, UpdateIconListDelegate{
     
     @IBOutlet var tableView: UITableView!
-    var items: [String] = [" Champaign", " Savoy", " Danville"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        WeatherInfo.updateIconListDelegate = self
         // Do any additional setup after loading the view.
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    }
+    
+    func updateIconList() {
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,29 +28,32 @@ class CityListViewController: UIViewController,UITableViewDelegate, UITableViewD
         // Dispose of any resources that can be recreated.
     }
 
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count;
+        return WeatherInfo.citiesAround.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-        var lab = UILabel(frame: CGRectMake(0, 0, 200, 40))
-        lab.text = self.items[indexPath.row]
-        lab.font = UIFont(name: "Slayer", size: 16)
-        lab.textColor = UIColor.whiteColor()
-        cell.backgroundColor = UIColor.clearColor()
-        cell.addSubview(lab)
-        return cell
+  
+        var cell:UITableViewCell? = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell?
+        
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
+
+            var lab = UILabel(frame: CGRectMake(10, 0, 200, 40))
+            lab.font = UIFont(name: "Slayer", size: 16)
+            lab.textColor = UIColor.whiteColor()
+            lab.tag = 10
+            cell!.backgroundColor = UIColor.clearColor()
+            cell!.contentView.addSubview(lab)
+            
+        }
+        
+        let cityInfo = WeatherInfo.citiesAroundDict[WeatherInfo.citiesAround[indexPath.row]] as! [String: AnyObject]
+        println(cell?.subviews)
+        var label:UILabel = cell!.contentView.viewWithTag(10)! as! UILabel
+        label.text = cityInfo["name"]! as? String
+        
+        return cell!
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
