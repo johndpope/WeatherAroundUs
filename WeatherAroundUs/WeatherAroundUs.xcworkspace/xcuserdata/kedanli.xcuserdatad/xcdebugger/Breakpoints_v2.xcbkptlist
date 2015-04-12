@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherAroundUs/CachingTileClass.swift"
-            timestampString = "449962352.33334"
+            timestampString = "450567146.261621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -57,76 +57,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeatherAroundUs/WeatherInformation.swift"
-            timestampString = "449971311.700504"
+            filePath = "WeatherAroundUs/AppDelegate.swift"
+            timestampString = "450554047.261937"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "getLocalWeatherInformation(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WeatherAroundUs.WeatherInformation.getLocalWeatherInformation (WeatherAroundUs.WeatherInformation)(Swift.Array&lt;C.CLLocationCoordinate2D&gt;) -&gt; ()"
-                  moduleName = "WeatherAroundUs"
-                  urlString = "file:///Users/kedanli/Desktop/WeatherAroundUs/WeatherAroundUs/WeatherAroundUs/WeatherInformation.swift"
-                  timestampString = "449949647.450054"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "1804">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WeatherAroundUs.WeatherInformation.getLocalWeatherInformation (WeatherAroundUs.WeatherInformation)(Swift.Array&lt;C.CLLocationCoordinate2D&gt;) -&gt; ()"
-                  moduleName = "WeatherAroundUs"
-                  urlString = "file:///Users/kedanli/Desktop/WeatherAroundUs/WeatherAroundUs/WeatherAroundUs/WeatherInformation.swift"
-                  timestampString = "449949647.450296"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "1812">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WeatherAroundUs/WeatherInformation.swift"
-            timestampString = "449971311.700504"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "getLocalWeatherInformation(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WeatherAroundUs/MapViewForWeather.swift"
-            timestampString = "449970333.100222"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "gotOneNewWeatherData(_:)"
-            landmarkType = "5">
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "applicationDocumentsDirectory"
+            landmarkType = "19">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

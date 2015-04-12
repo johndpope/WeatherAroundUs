@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import TMCache
+import Haneke
 
 class CachingTileClass: GMSSyncTileLayer {
     
@@ -37,12 +37,20 @@ class CachingTileClass: GMSSyncTileLayer {
         var str = "http://api.tiles.mapbox.com/v4/likedan5.60317478/\(zoom)/\(x)/\(y).png256?access_token=pk.eyJ1IjoibGlrZWRhbjUiLCJhIjoiaXJFLW9qbyJ9.SrX6tNNlKtUDVnure_XOAQ"
         var url = NSURL(string: str)
         
-            UIImage.imageFromURL(str, placeholder: UIImage(named: "Card")!, shouldCacheImage: true, closure: { (image) -> () in
-                layerImg = image
-                dispatch_semaphore_signal(semaphore!)
-            })
             
+            let cache = Shared.dataCache
             
+            cache.fetch(URL: url!).onSuccess { image in
+                //println(image.description)
+                layerImg = UIImage(data: image)
+                
+                dispatch_semaphore_signal(semaphore!);
+            }
+            //.sharedCache().imageForURL(url, completionBlock: { (image) -> Void in
+                //layerImg = image
+                //dispatch_semaphore_signal(semaphore!)
+            
+
         }
         
         dispatch_semaphore_wait(semaphore!, DISPATCH_TIME_FOREVER);

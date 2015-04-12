@@ -112,7 +112,7 @@ extension UIImage {
         // Init
         UIGraphicsBeginImageContextWithOptions(size, true, 0)
         
-        let num_locations: UInt = 2
+        let num_locations: Int = 2
         let locations: [CGFloat] = [0.0, 1.0]
         
         let startComponents = CGColorGetComponents(startColor.CGColor)
@@ -186,7 +186,7 @@ extension UIImage {
         let colorSpace = CGImageGetColorSpace(self.CGImage)
         let bitmapInfo = CGImageGetBitmapInfo(self.CGImage)
         let bitsPerComponent = CGImageGetBitsPerComponent(self.CGImage)
-        let context = CGBitmapContextCreate(nil, UInt(rect.size.width), UInt(rect.size.height), bitsPerComponent, 0, colorSpace, bitmapInfo)
+        let context = CGBitmapContextCreate(nil, Int(rect.size.width), Int(rect.size.height), bitsPerComponent, 0, colorSpace, bitmapInfo)
         
         // Draw the image in the center of the context, leaving a gap around the edges
         let imageLocation = CGRect(x: padding, y: padding, width: image!.size.width, height: image!.size.height)
@@ -205,7 +205,7 @@ extension UIImage {
         // Build a context that's the same dimensions as the new size
         let colorSpace = CGColorSpaceCreateDeviceGray()
         let bitmapInfo = CGBitmapInfo(CGBitmapInfo.ByteOrderDefault.rawValue | CGImageAlphaInfo.None.rawValue)
-        let context = CGBitmapContextCreate(nil, UInt(size.width), UInt(size.height), 8, 0, colorSpace, bitmapInfo)
+        let context = CGBitmapContextCreate(nil, Int(size.width), Int(size.height), 8, 0, colorSpace, bitmapInfo)
         // Start with a mask that's entirely transparent
         CGContextSetFillColorWithColor(context, UIColor.blackColor().CGColor)
         CGContextFillRect(context, CGRect(x: 0, y: 0, width: size.width, height: size.height))
@@ -292,7 +292,7 @@ extension UIImage {
     {
         // Allocate color space
         var colorSpace = CGColorSpaceCreateDeviceRGB()
-        let componentCount : UInt = UInt(locationList.count)
+        let componentCount : Int = Int(locationList.count)
         //allocate myGradient
         //var locationList: [CGFloat] = [0.0,1.0]
         //var colorList: [CGFloat] = [253.0/255.0, 76.0/255.0, 83.0 / 255.0, 1.0, 1.0, 1.0, 1.0, 0.0]
@@ -301,7 +301,7 @@ extension UIImage {
         // Allocate bitmap context
         
         let bitmapInfo = CGBitmapInfo(CGImageAlphaInfo.PremultipliedLast.rawValue)
-        let bitmapContext = CGBitmapContextCreate(nil, UInt(frame.width), UInt(frame.height), 8, 0, colorSpace, bitmapInfo)
+        let bitmapContext = CGBitmapContextCreate(nil, Int(frame.width), Int(frame.height), 8, 0, colorSpace, bitmapInfo)
         
         //Draw Gradient Here
         
@@ -362,7 +362,7 @@ extension UIImage {
         if shouldCacheImage {
             if UIImage.sharedCache().objectForKey(url) != nil {
                 closure(image: nil)
-                return UIImage.sharedCache().objectForKey(url) as UIImage!
+                return UIImage.sharedCache().objectForKey(url) as! UIImage!
             }
         }
         // Fetch Image

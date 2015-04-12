@@ -9,9 +9,13 @@
 import UIKit
 import Alamofire
 
-protocol WeatherInformationDelegate: class {
-    func gotOneNewWeatherData(cityID: String)
-    func removeOneCity(cityID: String)
+@objc protocol WeatherInformationDelegate: class {
+    optional func gotOneNewWeatherData(cityID: String, latitude:CLLocationDegrees, longitude:CLLocationDegrees)
+}
+
+@objc protocol WeatherInternet: class {
+    optional func internetBusy()
+    optional func internetBackToNormal()
 }
 
 class WeatherInformation: NSObject {
@@ -25,47 +29,52 @@ class WeatherInformation: NSObject {
     let maxRequest = 50
     
     var delegate : WeatherInformationDelegate?
-    
-    func getLocalWeatherInformation(locations: [CLLocationCoordinate2D]){
-        
-        if ongoingRequest < maxRequest{
-        
-        for location in locations {
-            
-            ongoingRequest++
-            var req = Alamofire.request(.GET, NSURL(string: "http://api.openweathermap.org/data/2.5/forecast/daily?lat=\(location.latitude)&lon=\(location.longitude)&cnt=2&mode=json")!).responseJSON { (_, response, JSON, error) in
-                
-                println(response)
-                println(error)
-                self.ongoingRequest--
-                if JSON != nil {
-                    var result = JSON as [String : AnyObject]
-                    let id: AnyObject! = (result["city"] as [String : AnyObject]) ["id"]
-                    println(self.ongoingRequest)
-                    if self.citiesAroundDict["\(id)"] == nil {
-                        self.citiesAroundDict.updateValue(result, forKey: "\(id)")
-                        self.citiesAround.append("\(id)")
-                        self.delegate?.gotOneNewWeatherData("\(id)")
-                        
-                        if self.citiesAround.count > self.maxCityNum{
-                            self.removeACity()
-                        }
-                    }
+    var delegate1 : WeatherInternet?
 
+    func getLocalWeatherInformation(location: CLLocationCoordinate2D){
+        
+        println("call")
+        
+        var req = Alamofire.request(.GET, NSURL(string: "http://api.openweathermap.org/data/2.5/find?lat=\(location.latitude)&lon=\(location.longitude)&cnt=6&mode=json")!).responseJSON { (_, response, JSON, error) in
+            
+            if error == nil && JSON != nil {
+                
+                
+                var result = JSON as! [String : AnyObject]
+                
+                
+                println(result.description)
+
+                
+                let list:[AnyObject] = result["list"] as! [AnyObject]
+                
+                for city in list{
+                    
+                    let id: Int = (city as! [String : AnyObject]) ["id"] as! Int
+                    
+                    self.delegate?.gotOneNewWeatherData!("\(id)", latitude: (((city as! [String : AnyObject]) ["coord"] as! [String: AnyObject])["lat"]! as! Double), longitude: (((city as! [String : AnyObject]) ["coord"] as! [String: AnyObject])["lon"]! as! Double))
+                    
+                    // first time weather data
+                    if self.citiesAroundDict["\(id)"] == nil {
+                        self.citiesAroundDict.updateValue(city, forKey: "\(id)")
+                        // save the city in db
+                    }
+                }
+                
+                //update icon
+                if self.ongoingRequest > 0{
+                    self.delegate1?.internetBusy!()
+                }else{
+                    self.delegate1?.internetBackToNormal!()
                 }
             }
             
+            
         }
-        }
+
         
     }
-    
-    func removeACity(){
-        let id = citiesAround[0]
-        citiesAround.removeAtIndex(0)
-        citiesAroundDict.removeValueForKey(id)
-        self.delegate?.removeOneCity(id)
-    }
+
     
     func removeAllCities(){
         citiesAround.removeAll(keepCapacity: false)

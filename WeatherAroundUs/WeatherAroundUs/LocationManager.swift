@@ -33,7 +33,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     //called when location update
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
-        centerLocation = locations[locations.count - 1] as CLLocation
+        centerLocation = locations[locations.count - 1] as! CLLocation
         
         self.delegate?.gotCurrentLocation!(centerLocation)
         
