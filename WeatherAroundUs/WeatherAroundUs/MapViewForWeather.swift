@@ -83,11 +83,11 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
     
     func getImageAccordingToZoom(cityID: String)->UIImage{
         if zoom > 12.5{
-            return UIImage(named: "cloudAndSun")!.resize(CGSizeMake(40, 40))
+            return UIImage(named: "cloudAndSun")!.resize(CGSizeMake(50, 50))
         }else if zoom < 11{
-            return UIImage(named: "cloudAndSun")!.resize(CGSizeMake(15, 15))
-        }else{
             return UIImage(named: "cloudAndSun")!.resize(CGSizeMake(25, 25))
+        }else{
+            return UIImage(named: "cloudAndSun")!.resize(CGSizeMake(35, 35))
         }
     }
 
@@ -132,15 +132,13 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
     
     func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
         
-        
-    }
-    
-    func mapView(mapView: GMSMapView!, didLongPressAtCoordinate coordinate: CLLocationCoordinate2D) {
-        var content = GMSMarker(position: coordinate)
-        content.icon = UIImage(named: "rainning")?.resize(CGSizeMake(25, 25))
-        content.appearAnimation = kGMSMarkerAnimationPop
-        //content.snippet = "sdds"
-        content.map = self
+        if abs(camera.zoom - zoom) > 0.5{
+            zoom = camera.zoom
+            let iconKeys = weatherIcons.keys
+            for key in iconKeys{
+                weatherIcons[key]?.icon = getImageAccordingToZoom("")
+            }
+        }
         
     }
     

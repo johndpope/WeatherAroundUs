@@ -42,6 +42,8 @@ class WeatherInformation: NSObject {
                 
                 for city in list{
                     
+                    println(city.description)
+                    
                     let id: Int = (city as! [String : AnyObject]) ["id"] as! Int
                     
                     self.weatherDelegate?.gotOneNewWeatherData!("\(id)", latitude: (((city as! [String : AnyObject]) ["coord"] as! [String: AnyObject])["lat"]! as! Double), longitude: (((city as! [String : AnyObject]) ["coord"] as! [String: AnyObject])["lon"]! as! Double))
