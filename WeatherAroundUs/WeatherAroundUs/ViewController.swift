@@ -12,7 +12,7 @@ import Spring
 class ViewController: UIViewController, GMSMapViewDelegate {
 
     @IBOutlet var cityList: UIView!
-    @IBOutlet var menuButton: DesignableButton!
+    @IBOutlet var clockButton: DesignableButton!
     @IBOutlet var mapView: MapViewForWeather!
 
     var weatherCardList = [UIImageView]()
@@ -25,14 +25,16 @@ class ViewController: UIViewController, GMSMapViewDelegate {
         var cityListDisappearDragger: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: "cityListDisappear:")
         self.cityList.addGestureRecognizer(cityListDisappearDragger)
 
-        
+        clockButton.layer.shadowOffset = CGSizeMake(0, 2);
+        clockButton.layer.shadowRadius = 1;
+        clockButton.layer.shadowOpacity = 0.3;
        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     
     override func viewDidAppear(animated: Bool) {
-        menuButton.animate()
+        clockButton.animate()
         
         cityList.frame.size = CGSizeMake(view.frame.size.width / 2 , cityList.frame.size.height)
         cityList.frame.origin = CGPointMake(-self.view.frame.width, 0)

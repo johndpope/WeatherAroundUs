@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		422B85021ADB4B2300EED903 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 422B85011ADB4B2300EED903 /* clock.png */; };
+		422B85031ADB4B2300EED903 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 422B85011ADB4B2300EED903 /* clock.png */; };
 		4242E6C41AD1D69B00D7EB9A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4242E6C31AD1D69B00D7EB9A /* Alamofire.framework */; };
 		427BAFA51AD0E6F900C87BDE /* MapViewForWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427BAFA41AD0E6F900C87BDE /* MapViewForWeather.swift */; };
 		427BAFAA1AD0E71100C87BDE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427BAFA91AD0E71100C87BDE /* LocationManager.swift */; };
@@ -65,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		422B85011ADB4B2300EED903 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
 		4242E6C31AD1D69B00D7EB9A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
 		427BAF711AD0C30B00C87BDE /* HanekeSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HanekeSwift.framework; path = "Pods/../build/Debug-iphoneos/Pods/HanekeSwift.framework"; sourceTree = "<group>"; };
 		427BAFA41AD0E6F900C87BDE /* MapViewForWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewForWeather.swift; sourceTree = "<group>"; };
@@ -239,6 +242,7 @@
 		42F15D491AD08275004D64EF /* IMGs */ = {
 			isa = PBXGroup;
 			children = (
+				422B85011ADB4B2300EED903 /* clock.png */,
 				427BAFB81AD0EFA000C87BDE /* lightningAndRain.png */,
 				42F62E741AD0B6EE00D494E6 /* ListOfCities.png */,
 				42F15D471AD08271004D64EF /* fake_map.png */,
@@ -377,6 +381,7 @@
 				427BAFC51AD0F2B500C87BDE /* eveningrain.png in Resources */,
 				427BAFC61AD0F2B500C87BDE /* rainning.png in Resources */,
 				42D4EDD61A9E7F02006AE807 /* LaunchScreen.xib in Resources */,
+				422B85021ADB4B2300EED903 /* clock.png in Resources */,
 				427BAFAC1AD0EBBF00C87BDE /* slayer11.ttf in Resources */,
 				42D4EDD31A9E7F02006AE807 /* Images.xcassets in Resources */,
 				427BAFC81AD0F2B500C87BDE /* suncloud.png in Resources */,
@@ -391,6 +396,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				422B85031ADB4B2300EED903 /* clock.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

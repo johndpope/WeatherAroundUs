@@ -10,7 +10,7 @@ import UIKit
 
 class CityListViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, UpdateIconListDelegate{
     
-    @IBOutlet var tableView: UITableView!
+    var cardList: [UIButton]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,9 @@ class CityListViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     
     func updateIconList() {
-        tableView.reloadData()
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +35,7 @@ class CityListViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-  
+  /*
         var cell:UITableViewCell? = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell?
         
         if cell == nil {
@@ -53,11 +55,12 @@ class CityListViewController: UIViewController,UITableViewDelegate, UITableViewD
         var label:UILabel = cell!.contentView.viewWithTag(10)! as! UILabel
         label.text = cityInfo["name"]! as? String
         
-        return cell!
+        return cell!*/
+        return UITableViewCell()
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("You selected cell #\(indexPath.row)!")
     }
-    
+
 }
