@@ -72,7 +72,7 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
             
             var marker = GMSMarker(position: CLLocationCoordinate2DMake(latitude
                 , longitude))
-            marker.icon = UIImage(named: "sunrainning")?.resize(CGSizeMake(25, 25))
+            marker.icon = getImageAccordingToZoom(cityID)
             marker.appearAnimation = kGMSMarkerAnimationPop
             marker.map = self
             marker.title = cityID
@@ -83,11 +83,11 @@ class MapViewForWeather: GMSMapView, GMSMapViewDelegate, LocationManagerDelegate
     
     func getImageAccordingToZoom(cityID: String)->UIImage{
         if zoom > 12.5{
-            return UIImage(named: "sunrainning")!.resize(CGSizeMake(50, 50))
+            return UIImage(named: "cloudAndSun")!.resize(CGSizeMake(40, 40))
         }else if zoom < 11{
-            return UIImage(named: "sunrainning")!.resize(CGSizeMake(15, 15))
+            return UIImage(named: "cloudAndSun")!.resize(CGSizeMake(15, 15))
         }else{
-            return UIImage(named: "sunrainning")!.resize(CGSizeMake(25, 25))
+            return UIImage(named: "cloudAndSun")!.resize(CGSizeMake(25, 25))
         }
     }
 
